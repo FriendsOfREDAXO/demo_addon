@@ -6,8 +6,8 @@
 echo rex_view::title($this->i18n('title')); // $this->i18n('title') ist eine Kurzform für rex_i18n::msg('dummy_title')
 
 // Die Subpages werden nicht mehr über den "subpage"-Parameter gesteuert, sondern mit über "page" (getrennt mit einem Slash, z. B. page=dummy/config)
-// Die einzelnen Teile des page-Pfades können mit der folgenden Funktion ausgelesen werden (die Zählung beginnt bei 0)
-$subpage = rex_be_controller::getCurrentPagePart(1);
+// Die einzelnen Teile des page-Pfades können mit der folgenden Funktion ausgelesen werden.
+$subpage = rex_be_controller::getCurrentPagePart(2);
 
 switch ($subpage) {
   case 'config':
