@@ -1,0 +1,13 @@
+# Da R5 nur noch mit UTF8 arbeitet, entfällt der "utf8"-Suffix
+
+# Die Keys sollten mit dem Addonnamen beginnen, da sie so innerhalb des Addons vereinfacht abgefragt werden können
+
+dummy_title = Dummy
+
+dummy_main = Hauptseite
+
+dummy_config = Einstellungen
+dummy_config_url = URL
+dummy_config_ids = IDs
+dummy_config_save = Einstellungen speichern
+dummy_config_saved = Einstellungen wurden gespeichert!

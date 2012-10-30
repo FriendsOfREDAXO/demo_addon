@@ -1,3 +1,12 @@
+# Alle hier gesetzten Werte können über $addon->getProperty($key) abgefragt werden
+
 version: '1.0'
 author: Gregor Harlan
 supportpage: www.redaxo.org/de/forum
+
+navigation:
+  title: 'translate:title' # Werte die mit "translate:" beginnen, werden anhand der Sprachdatei übersetzt. Der Addon-Präfix (hier "dummy_") kann weggelassen werden.
+  perm: admin
+  subpages:
+    '': {title: 'translate:main'}
+    config: {title: 'translate:config'}
