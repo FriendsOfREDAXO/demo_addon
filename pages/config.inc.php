@@ -1,16 +1,12 @@
 <?php
 
-$config = rex_post('config', array(
-  array('url', 'string'),
-  array('ids', 'array[int]'),
-  array('submit', 'boolean')
-));
-
 $content = '';
 
-if ($config['submit']) {
-  $this->setConfig('url', $config['url']);
-  $this->setConfig('ids', $config['ids']);
+if (rex_post('config-submit', 'boolean')) {
+  $this->setConfig(rex_post('config', array(
+    array('url', 'string'),
+    array('ids', 'array[int]')
+  )));
 
   $content .= rex_view::info($this->i18n('config_saved'));
 }
@@ -40,7 +36,7 @@ $n['field'] = $select->get();
 $formElements[] = $n;
 
 $n = array();
-$n['field'] = '<input type="submit" name="config[submit]" value="' . $this->i18n('config_save') . '" ' . rex::getAccesskey($this->i18n('config_save'), 'save') . ' />';
+$n['field'] = '<input type="submit" name="config-submit" value="' . $this->i18n('config_save') . '" ' . rex::getAccesskey($this->i18n('config_save'), 'save') . ' />';
 $formElements[] = $n;
 
 $fragment = new rex_fragment();
