@@ -11,3 +11,8 @@ dummy_config_url = URL
 dummy_config_ids = IDs
 dummy_config_save = Einstellungen speichern
 dummy_config_saved = Einstellungen wurden gespeichert!
+
+# Benennung für die Addonrechte, sichtbar innerhalb der REDAXO-Administration unter Benutzer > Rollen > Allgemein
+
+perm_general_dummy[] = Rechte für Dummy-Addon
+perm_general_dummy[config] = Rechte für Dummy-Addon-Konfiguration

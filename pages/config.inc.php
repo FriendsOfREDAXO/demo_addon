@@ -12,8 +12,9 @@ if (rex_post('config-submit', 'boolean')) {
 }
 
 $content .= '
+<div class="rex-form">
   <form action="' . rex_url::currentBackendPage() . '" method="post">
-    <fieldset>';
+    <fieldset>'.PHP_EOL;
 
 $formElements = array();
 
@@ -35,6 +36,17 @@ $select->setSelected($this->getConfig('ids'));
 $n['field'] = $select->get();
 $formElements[] = $n;
 
+$fragment = new rex_fragment();
+$fragment->setVar('elements', $formElements, false);
+$content .= $fragment->parse('form.tpl');
+
+$content .= '
+    </fieldset>
+
+    <fieldset class="rex-form-action">'.PHP_EOL;
+
+$formElements = array();
+
 $n = array();
 $n['field'] = '<input type="submit" name="config-submit" value="' . $this->i18n('config_save') . '" ' . rex::getAccesskey($this->i18n('config_save'), 'save') . ' />';
 $formElements[] = $n;
@@ -45,6 +57,8 @@ $content .= $fragment->parse('form.tpl');
 
 $content .= '
     </fieldset>
-  </form>';
 
-echo rex_view::contentBlock($content);
+  </form>
+</div>';
+
+echo rex_view::contentBlock($content, '', 'block');
