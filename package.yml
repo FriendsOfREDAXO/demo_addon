@@ -1,6 +1,7 @@
 # Alle hier gesetzten Werte können über $addon->getProperty($key) abgefragt werden
 
-version: '1.0'
+package: dummy # Pflichtfeld
+version: '1.0' # Pflichtfeld
 author: Gregor Harlan
 supportpage: www.redaxo.org/de/forum
 
