@@ -10,3 +10,10 @@ $this->setProperty('author', 'Gregor Harlan');
 // Stattdessen sollte dafür die rex_config verwendet werden (siehe install.inc.php)
 
 // Klassen und lang-Dateien müssen hier nicht mehr eingebunden werden, sie werden nun automatisch gefunden.
+
+
+// Addonrechte (permissions) registieren
+if (rex::isBackend() && is_object(rex::getUser())) {
+  rex_perm::register('dummy[]');
+  rex_perm::register('dummy[config]');
+}
