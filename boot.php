@@ -7,7 +7,7 @@
 $this->setProperty('author', 'Gregor Harlan');
 
 // Die Datei sollte keine veränderbare Konfigurationen mehr enthalten, um die Updatefähigkeit zu erhalten.
-// Stattdessen sollte dafür die rex_config verwendet werden (siehe install.inc.php)
+// Stattdessen sollte dafür die rex_config verwendet werden (siehe install.php)
 
 // Klassen und lang-Dateien müssen hier nicht mehr eingebunden werden, sie werden nun automatisch gefunden.
 

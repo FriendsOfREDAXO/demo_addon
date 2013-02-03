@@ -11,8 +11,8 @@ $subpage = rex_be_controller::getCurrentPagePart(2);
 
 switch ($subpage) {
   case 'config':
-    include $this->getBasePath('pages/config.inc.php');
+    include $this->getPath('pages/config.php');
     break;
   default:
-    include $this->getBasePath('pages/main.inc.php');
+    include $this->getPath('pages/main.php');
 }
