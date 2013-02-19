@@ -1,5 +1,7 @@
 <?php
 
+/** @var rex_addon $this */
+
 // Diese Datei ist keine Pflichtdatei mehr.
 
 // SQL-Anweisungen können auch weiterhin über die uninstall.sql ausgeführt werden.

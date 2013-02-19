@@ -1,5 +1,7 @@
 <?php
 
+/** @var rex_addon $this */
+
 // Die layout/top.php und layout/bottom.php werden automatisch eingebunden
 
 // Die Subpages müssen dem Titel nicht mehr übergeben werden

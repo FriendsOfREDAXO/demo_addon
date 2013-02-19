@@ -1,5 +1,7 @@
 <?php
 
+/** @var rex_addon $this */
+
 // Diese Datei ist keine Pflichdatei mehr.
 
 // Daten wie Autor, Version, Subpages etc. sollten wenn möglich in der package.yml notiert werden.
