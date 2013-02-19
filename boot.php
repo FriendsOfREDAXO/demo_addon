@@ -16,6 +16,6 @@ $this->setProperty('author', 'Gregor Harlan');
 
 // Addonrechte (permissions) registieren
 if (rex::isBackend() && is_object(rex::getUser())) {
-  rex_perm::register('dummy[]');
-  rex_perm::register('dummy[config]');
+    rex_perm::register('dummy[]');
+    rex_perm::register('dummy[config]');
 }

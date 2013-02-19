@@ -5,18 +5,18 @@
 $content = '';
 
 if (rex_post('config-submit', 'boolean')) {
-  $this->setConfig(rex_post('config', array(
-    array('url', 'string'),
-    array('ids', 'array[int]')
-  )));
+    $this->setConfig(rex_post('config', array(
+        array('url', 'string'),
+        array('ids', 'array[int]')
+    )));
 
-  $content .= rex_view::info($this->i18n('config_saved'));
+    $content .= rex_view::info($this->i18n('config_saved'));
 }
 
 $content .= '
 <div class="rex-form">
-  <form action="' . rex_url::currentBackendPage() . '" method="post">
-    <fieldset>';
+    <form action="' . rex_url::currentBackendPage() . '" method="post">
+        <fieldset>';
 
 $formElements = array();
 
@@ -32,7 +32,7 @@ $select->setId('rex-dummy-config-ids');
 $select->setMultiple();
 $select->setName('config[ids][]');
 for ($i = 1; $i < 6; ++$i) {
-  $select->addOption($i, $i);
+    $select->addOption($i, $i);
 }
 $select->setSelected($this->getConfig('ids'));
 $n['field'] = $select->get();
@@ -43,9 +43,9 @@ $fragment->setVar('elements', $formElements, false);
 $content .= $fragment->parse('form.tpl');
 
 $content .= '
-    </fieldset>
+        </fieldset>
 
-    <fieldset class="rex-form-action">';
+        <fieldset class="rex-form-action">';
 
 $formElements = array();
 
@@ -58,9 +58,9 @@ $fragment->setVar('elements', $formElements, false);
 $content .= $fragment->parse('form.tpl');
 
 $content .= '
-    </fieldset>
+        </fieldset>
 
-  </form>
+    </form>
 </div>';
 
 echo rex_view::contentBlock($content, '', 'block');
