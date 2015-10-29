@@ -40,7 +40,7 @@ $formElements[] = $n;
 
 $fragment = new rex_fragment();
 $fragment->setVar('elements', $formElements, false);
-$content .= $fragment->parse('form.tpl');
+$content .= $fragment->parse('core/form/form.php');
 
 $content .= '
         </fieldset>
@@ -55,7 +55,7 @@ $formElements[] = $n;
 
 $fragment = new rex_fragment();
 $fragment->setVar('elements', $formElements, false);
-$content .= $fragment->parse('form.tpl');
+$content .= $fragment->parse('core/form/submit.php');
 
 $content .= '
         </fieldset>
@@ -63,4 +63,4 @@ $content .= '
     </form>
 </div>';
 
-echo rex_view::contentBlock($content, '', 'block');
+echo $content;
