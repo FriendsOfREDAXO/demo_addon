@@ -13,7 +13,6 @@ $this->setProperty('author', 'Gregor Harlan');
 
 // Klassen und lang-Dateien müssen hier nicht mehr eingebunden werden, sie werden nun automatisch gefunden.
 
-
 // Addonrechte (permissions) registieren
 if (rex::isBackend() && is_object(rex::getUser())) {
     rex_perm::register('dummy[]');

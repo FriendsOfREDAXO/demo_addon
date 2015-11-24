@@ -2,4 +2,6 @@
 
 $content = 'Allgemeine Dummy-Seite';
 
-echo rex_view::content('block', $content);
+$fragment = new rex_fragment();
+$fragment->setVar('body', $content, false);
+echo $fragment->parse('core/page/section.php');
