@@ -2,8 +2,8 @@
 
 package: dummy # Pflichtfeld
 version: '1.0' # Pflichtfeld
-author: Gregor Harlan
-supportpage: www.redaxo.org/de/forum
+author: Friends Of REDAXO
+supportpage: https://github.com/FriendsOfREDAXO/dummy
 
 page:
     title: 'translate:title' # Werte die mit "translate:" beginnen, werden anhand der Sprachdatei übersetzt. Der Addon-Präfix (hier "dummy_") kann weggelassen werden.
