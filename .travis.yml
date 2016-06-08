@@ -1,8 +1,0 @@
-language: php
-php:
-    - 5.3
-    - 5.4
-before_script:
-    - curl https://raw.github.com/redaxo/redaxo/master/coding_standards.phar -Os
-script:
-    - php coding_standards.phar check --hide-process
