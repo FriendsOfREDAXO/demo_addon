@@ -11,3 +11,11 @@ page:
     subpages:
         main: { title: 'translate:main' }
         config: { title: 'translate:config', perm: dummy[config] } # config-Seite mit separaten Rechten
+
+requires:
+    redaxo: '^5.0' # benötigt mindestens REDAXO 5.0
+    packages:		
+        media_manager: '^2.0.1' # benötigt mindestens das Addon Media Manager 2.0.1
+    php:		
+        version: '^5.6' # benötigt mindestens PHP 5.6
+        extensions: [gd, xml] # benötigt die PHP-Extensions GDlib und XML

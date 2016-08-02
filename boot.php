@@ -18,3 +18,20 @@ if (rex::isBackend() && is_object(rex::getUser())) {
     rex_perm::register('dummy[]');
     rex_perm::register('dummy[config]');
 }
+
+// Assets werden bei der Installation des Addons in den assets-Ordner kopiert und stehen damit
+// öffentlich zur Verfügung. Sie müssen dann allerdings noch eingebunden werden:
+
+// Assets im Backend einbinden
+if (rex::isBackend() && rex::getUser()) {
+
+    // Die dummy.css überall im Backend einbinden
+    // Es wird eine Versionsangabe angehängt, damit nach einem neuen Release des Addons die Datei nicht
+    // aus dem Browsercache verwendet, sondern frisch geladen wird
+    rex_view::addCssFile($this->getAssetsUrl('css/dummy.css?v=' . $this->getVersion()));
+
+    // Die dummy.js nur auf der Unterseite »config« des Addons einbinden
+    if (rex_be_controller::getCurrentPagePart(2) == 'config') {
+        rex_view::addJsFile($this->getAssetsUrl('js/dummy.js?v=' . $this->getVersion()));
+    }
+}
