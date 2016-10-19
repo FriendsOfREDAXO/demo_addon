@@ -10,7 +10,7 @@ page:
     perm: dummy[]
     subpages:
         main: { title: 'translate:main' }
-        config: { title: 'translate:config', perm: dummy[config] } # config-Seite mit separaten Rechten
+        config: { title: 'translate:config', perm: dummy[config], icon: rex-icon fa-wrench } # config-Seite mit separaten Rechten
 
 requires:
     redaxo: '^5.0' # benötigt mindestens REDAXO 5.0

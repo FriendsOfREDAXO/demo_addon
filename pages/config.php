@@ -22,7 +22,7 @@ $formElements = [];
 
 $n = [];
 $n['label'] = '<label for="rex-dummy-config-url">' . $this->i18n('config_url') . '</label>';
-$n['field'] = '<input type="text" id="rex-dummy-config-url" name="config[url]" value="' . $this->getConfig('url') . '"/>';
+$n['field'] = '<input class="form-control" type="text" id="rex-dummy-config-url" name="config[url]" value="' . $this->getConfig('url') . '"/>';
 $formElements[] = $n;
 
 $n = [];
@@ -30,6 +30,7 @@ $n['label'] = '<label for="rex-dummy-config-ids">' . $this->i18n('config_ids') .
 $select = new rex_select();
 $select->setId('rex-dummy-config-ids');
 $select->setMultiple();
+$select->setAttribute('class', 'form-control');
 $select->setName('config[ids][]');
 for ($i = 1; $i < 6; ++$i) {
     $select->addOption($i, $i);
@@ -50,7 +51,7 @@ $content .= '
 $formElements = [];
 
 $n = [];
-$n['field'] = '<input type="submit" name="config-submit" value="' . $this->i18n('config_save') . '" ' . rex::getAccesskey($this->i18n('config_save'), 'save') . ' />';
+$n['field'] = '<input class="btn btn-save rex-form-aligned" type="submit" name="config-submit" value="' . $this->i18n('config_save') . '" ' . rex::getAccesskey($this->i18n('config_save'), 'save') . ' />';
 $formElements[] = $n;
 
 $fragment = new rex_fragment();
