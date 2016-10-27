@@ -2,17 +2,17 @@
 
 # Die Keys sollten mit dem Addonnamen beginnen, da sie so innerhalb des Addons vereinfacht abgefragt werden können
 
-dummy_title = Dummy
+demo_addon_title = Demo-Addon
 
-dummy_main = Hauptseite
+demo_addon_main = Hauptseite
 
-dummy_config = Einstellungen
-dummy_config_url = URL
-dummy_config_ids = IDs
-dummy_config_save = Einstellungen speichern
-dummy_config_saved = Einstellungen wurden gespeichert!
+demo_addon_config = Einstellungen
+demo_addon_config_url = URL
+demo_addon_config_ids = IDs
+demo_addon_config_save = Einstellungen speichern
+demo_addon_config_saved = Einstellungen wurden gespeichert!
 
 # Benennung für die Addonrechte, sichtbar innerhalb der REDAXO-Administration unter Benutzer > Rollen > Allgemein
 
-perm_general_dummy[] = Rechte für Dummy-Addon
-perm_general_dummy[config] = Rechte für Dummy-Addon-Konfiguration
+perm_general_demo_addon[] = Rechte für Demo-Addon
+perm_general_demo_addon[config] = Rechte für Demo-Addon-Konfiguration

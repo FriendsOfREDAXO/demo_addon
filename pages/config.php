@@ -21,14 +21,14 @@ $content .= '
 $formElements = [];
 
 $n = [];
-$n['label'] = '<label for="rex-dummy-config-url">' . $this->i18n('config_url') . '</label>';
-$n['field'] = '<input class="form-control" type="text" id="rex-dummy-config-url" name="config[url]" value="' . $this->getConfig('url') . '"/>';
+$n['label'] = '<label for="rex-demo_addon-config-url">' . $this->i18n('config_url') . '</label>';
+$n['field'] = '<input class="form-control" type="text" id="rex-demo_addon-config-url" name="config[url]" value="' . $this->getConfig('url') . '"/>';
 $formElements[] = $n;
 
 $n = [];
-$n['label'] = '<label for="rex-dummy-config-ids">' . $this->i18n('config_ids') . '</label>';
+$n['label'] = '<label for="rex-demo_addon-config-ids">' . $this->i18n('config_ids') . '</label>';
 $select = new rex_select();
-$select->setId('rex-dummy-config-ids');
+$select->setId('rex-demo_addon-config-ids');
 $select->setMultiple();
 $select->setAttribute('class', 'form-control');
 $select->setName('config[ids][]');

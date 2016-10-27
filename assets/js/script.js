@@ -8,7 +8,7 @@
     // https://api.jquery.com/ready/
     $(document).ready(function () {
 
-        console.log('Dummy-Addon');
+        console.log('Demo-Addon');
 
     });
 })(jQuery);
