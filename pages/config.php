@@ -10,7 +10,7 @@ if (rex_post('config-submit', 'boolean')) {
         ['ids', 'array[int]'],
     ]));
 
-    $content .= rex_view::info($this->i18n('config_saved'));
+    echo rex_view::success($this->i18n('config_saved'));
 }
 
 $content .= '
