@@ -5,6 +5,8 @@
 demo_addon_title = Demo-Addon
 
 demo_addon_main = Hauptseite
+demo_addon_main_title = Demo-Addon Titel Hauptseite
+demo_addon_main_content = Inhalt Demo-Addon-Seite
 
 demo_addon_config = Einstellungen
 demo_addon_config_url = URL

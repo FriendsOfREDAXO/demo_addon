@@ -1,0 +1,20 @@
+# Da R5 nur noch mit UTF8 arbeitet, entfällt der "utf8"-Suffix
+
+# Die Keys sollten mit dem Addonnamen beginnen, da sie so innerhalb des Addons vereinfacht abgefragt werden können
+
+demo_addon_title = Demo-Addon
+
+demo_addon_main = Mainpage
+demo_addon_main_title = Demo-Addon title mainpage
+demo_addon_main_content = Content Demo-Addon-Page
+
+demo_addon_config = Settings
+demo_addon_config_url = URL
+demo_addon_config_ids = IDs
+demo_addon_config_save = Save settings
+demo_addon_config_saved = Settings saved!
+
+# Benennung für die Addonrechte, sichtbar innerhalb der REDAXO-Administration unter Benutzer > Rollen > Allgemein
+
+perm_general_demo_addon[] = Rights for Demo-Addon
+perm_general_demo_addon[config] = Rights for Demo-Addon Settings
