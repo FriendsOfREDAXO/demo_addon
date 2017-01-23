@@ -13,7 +13,7 @@ page:
         config: { title: 'translate:config', perm: 'demo_addon[config]', icon: rex-icon fa-wrench } # config-Seite mit separaten Rechten
 
 requires:
-    redaxo: '^5.0' # benötigt mindestens REDAXO 5.0
+    redaxo: '>=5.0' # benötigt mindestens REDAXO 5.0
     packages:
         media_manager: '^2.0.1' # benötigt mindestens das Addon Media Manager 2.0.1
     php:
