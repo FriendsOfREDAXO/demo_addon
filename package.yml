@@ -17,5 +17,5 @@ requires:
     packages:
         media_manager: '^2.0.1' # benötigt mindestens das Addon Media Manager 2.0.1
     php:
-        version: '^5.6' # benötigt mindestens PHP 5.6
+        version: '>=5.6' # benötigt mindestens PHP 5.6
         extensions: [gd, xml] # benötigt die PHP-Extensions GDlib und XML
