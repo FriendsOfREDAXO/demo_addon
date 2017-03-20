@@ -2,14 +2,14 @@
 
 # Die Keys sollten mit dem Addonnamen beginnen, da sie so innerhalb des Addons vereinfacht abgefragt werden können
 
-demo_addon_title = Demo-Addon
+demo_addon_title = Demo-AddOn
 
-demo_addon_main = Mainpage
-demo_addon_main_title = Demo-Addon title mainpage
-demo_addon_main_content = Content Demo-Addon-Page
+demo_addon_main = Main page
+demo_addon_main_title = Demo-AddOn title main page
+demo_addon_main_content = Content Demo-AddOn page
 
 demo_addon_config = Settings
-demo_addon_config_legend1 = Simple Fields
+demo_addon_config_legend1 = Default fields
 demo_addon_config_url = URL
 demo_addon_config_checkbox = Checkbox
 demo_addon_config_select = Select
