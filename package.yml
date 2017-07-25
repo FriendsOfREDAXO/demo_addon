@@ -1,22 +1,21 @@
 # Alle hier gesetzten Werte können über $addon->getProperty($key) abgefragt werden
 
-package: plus_helferlein
-version: '0.0.1'
-author: alexplus.de
-supportpage: https://github.com/alexplusde/PlusHelferlein
+package: demo_addon # Pflichtfeld
+version: '1.0.0' # Pflichtfeld
+author: Friends Of REDAXO
+supportpage: https://github.com/FriendsOfREDAXO/demo_addon
 
 page:
-    title: 'translate:title'
-    perm: plus_helferlein[]
+    title: 'translate:title' # Werte die mit "translate:" beginnen, werden anhand der Sprachdatei übersetzt. Der Addon-Präfix (hier "demo_addon_") kann weggelassen werden.
+    perm: demo_addon[]
     subpages:
         main: { title: 'translate:main' }
-        config: { title: 'translate:config', perm: 'plus_helferlein[config]', icon: rex-icon fa-wrench }
+        config: { title: 'translate:config', perm: 'demo_addon[config]', icon: rex-icon fa-wrench } # config-Seite mit separaten Rechten
 
 requires:
-    redaxo: '>=5.3'
+    redaxo: '>=5.0' # benötigt mindestens REDAXO 5.0
     packages:
-        media_manager: '^2.3' 
-        yform: '^2.1'
+        media_manager: '^2.0.1' # benötigt mindestens das Addon Media Manager 2.0.1
     php:
-        version: '>=7' 
-        extensions: []
+        version: '>=5.6' # benötigt mindestens PHP 5.6
+        extensions: [gd, xml] # benötigt die PHP-Extensions GDlib und XML

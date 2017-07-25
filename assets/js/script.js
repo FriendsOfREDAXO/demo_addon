@@ -1,7 +1,7 @@
 // jQuery closure (»Funktionsabschluss«)
 // Erzeugt einen Scope, also einen privaten Bereich
 // http://molily.de/javascript-core/#closures
-/* (function ($) {
+(function ($) {
 
     // Document Ready
     // Führt Code aus, sobald der DOM vollständig geladen wurde
@@ -11,4 +11,4 @@
         console.log('Demo-Addon');
 
     });
-})(jQuery); */
+})(jQuery);
