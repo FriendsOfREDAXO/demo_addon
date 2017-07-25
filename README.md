@@ -1,4 +1,4 @@
 Demo-Addon für REDAXO 5
 ========================
 
-Bitte auch den Wiki-Artikel "[Änderungen in REDAXO 5](https://github.com/redaxo/redaxo/wiki/Aenderungen-in-REDAXO-5)" beachten!
+Bitte auch den Artikel "[Änderungen REDAXO 4 zu 5](https://redaxo.org/doku/master/aenderungen-v4-v5)" in der REDAXO-Dokumentation beachten!
