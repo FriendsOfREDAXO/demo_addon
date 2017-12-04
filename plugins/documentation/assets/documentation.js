@@ -1,3 +1,20 @@
+// Url-Parameter bereitstellen
+function getUrlParameter(sParam, url)
+{
+    var sPageURL = window.location.search.substring(1);
+	if (url) sPageURL = url;
+    var sURLVariables = sPageURL.split('&');
+    for (var i = 0; i < sURLVariables.length; i++)
+    {
+        var sParameterName = sURLVariables[i].split('=');
+        if (sParameterName[0] == sParam)
+        {
+            return sParameterName[1];
+        }
+    }
+	return '';
+} 
+
 // Dokument per Ajax laden
 function load_doc(elem) {
     $('div.addon_documentation-navi a').removeClass('current');
@@ -6,6 +23,9 @@ function load_doc(elem) {
 
     $url = $(elem).attr('href') + '&ajax=true';
     $target = $('div.addon_documentation-content').find('div.panel-body');
+	$doctitle = $('div.addon_documentation-content').find('#doc-file-name');
+	$document = getUrlParameter('document_file', $url);
+	$($doctitle).html($document);
 
     $($target).html('<div style="text-align:center;"><i class="fa fa-cog fa-spin fa-2x fa-fw"></i></div>');
 

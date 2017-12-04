@@ -1,7 +1,7 @@
 documentation_menu_entry = Dokumentation
 
-documentation_navigation_title = Navigation
-documentation_content_title = Innehåll
+documentation_navigation_title = Navigation [ main_navi.md ]
+documentation_content_title = Innehåll [ <span id="doc-file-name">{0}</span> ]
 
 documentation_noparser = Ingen Markdown Parser tillgänglig! Var god installera en parser först (AddOn markitup eller textil)
 

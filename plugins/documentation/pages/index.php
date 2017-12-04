@@ -169,7 +169,7 @@ $navi = $fragment->parse('core/page/section.php');
 
 // Inhalt
 $fragment = new rex_fragment();
-$fragment->setVar('title', rex_i18n::rawMsg('documentation_content_title'), false);
+$fragment->setVar('title', rex_i18n::rawMsg('documentation_content_title', $file), false);
 $fragment->setVar('body', $content, false);
 $content = $fragment->parse('core/page/section.php');
 
