@@ -29,6 +29,10 @@ requires:
         version: '>=5.6' # benötigt mindestens PHP 5.6
         extensions: [gd, xml] # benötigt die PHP-Extensions GDlib und XML
 
+# Plugins die automatisch installiert werden sollen
+system_plugins:
+    - documentation
+
 # Konflikte
 # Verhindert die Installation und Updates, wenn AddOns die genannten Anforderungen erfüllen
 # Siehe auch https://github.com/FriendsOfREDAXO/cache_warmup/pull/55#issuecomment-280906737
