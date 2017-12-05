@@ -2,8 +2,7 @@
 
 Das Plugin `documentation` dient als Basis für eine Hilfe/Dokumentation für REDAXO5-AddOns bei denen eine einfache README nicht ausreicht.
 
-`documentation` basiert auf dem documentation-Plugin des Addons [search_it](https://github.com/tyrant88/search_it) von @tyrant88 (Norbert Micheel)
-und erfunden hat's der @dergel (Jan Kristinus) für die [Dokumentation](https://github.com/yakamara/redaxo_yform_docs) zum [YForm-Addon](https://github.com/yakamara/redaxo_yform).
+`documentation` basiert auf dem documentation-Plugin des Addons [search_it](https://github.com/tyrant88/search_it) von @tyrant88 (Norbert Micheel) und erfunden hat's der @dergel (Jan Kristinus) für die [Dokumentation](https://github.com/yakamara/redaxo_yform_docs) zum [YForm-Addon](https://github.com/yakamara/redaxo_yform).
 
 ## Features
 
@@ -15,7 +14,7 @@ und erfunden hat's der @dergel (Jan Kristinus) für die [Dokumentation](https://
 
 ## Systemvoraussetzungen
 
-* `PHP >= 5.5`
+* `PHP >= 5.6`
 * `MySQL >= 5.0`
 * `REDAXO >= 5.0`
 
