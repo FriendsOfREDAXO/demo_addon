@@ -93,6 +93,21 @@ if (rex_request('document_image', 'string', '') != '' && isset($files[rex_reques
     while (ob_get_length()) {
         ob_end_clean();
     }
+
+    $filename = basename(rex_request('document_image', 'string'));
+    $file_extension = strtolower(substr(strrchr($filename,"."), 1));
+    $ctype = '';
+    switch( $file_extension ) {
+        case "gif": $ctype="image/gif"; break;
+        case "png": $ctype="image/png"; break;
+        case "jpeg":
+        case "jpg": $ctype="image/jpeg"; break;
+        default:
+    }
+    if ($ctype) {
+        header('Content-type: ' . $ctype);
+    }
+
     $content = rex_file::get($path . basename(rex_request('document_image', 'string')));
     echo $content;
     exit;
