@@ -125,3 +125,13 @@ font-family: FontAwesome;
     content: '\f0a9';
     margin-right: 10px;
 }
+
+/* externe Links */
+.addon_documentation a.extern {
+    margin-right: 5px;
+}
+.addon_documentation a.extern:after {
+    font-family: FontAwesome;
+    content: '\f08e';
+    margin-left: 5px;
+}

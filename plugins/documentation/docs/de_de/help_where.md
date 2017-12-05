@@ -9,8 +9,9 @@ oder im [REDAXO-Channel auf Slack](https://friendsofredaxo.slack.com/) gestellt 
 
 ---
 
-`documentation` Plugin auf Github<br>
-[https://github.com/FriendsOfREDAXO/demo_addon](https://github.com/FriendsOfREDAXO/demo_addon)
+`documentation` Plugin auf Github
+
+[github.com/FriendsOfREDAXO/demo_addon](https://github.com/FriendsOfREDAXO/demo_addon)
 
 ---
 

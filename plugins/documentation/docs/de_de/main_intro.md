@@ -23,4 +23,6 @@ und erfunden hat's der @dergel (Jan Kristinus) für die [Dokumentation](https://
 
 &raquo; Weiter zur **[Ordner-Struktur](main_folder.md)**
 
+<p style="text-align:center">
 ![FriendsOfREDAXO](for.png)
+</p>
