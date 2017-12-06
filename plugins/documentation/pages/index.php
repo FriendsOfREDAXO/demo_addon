@@ -95,7 +95,8 @@ if (rex_request('document_image', 'string', '') != '' && isset($files[rex_reques
     }
 
     $filename = basename(rex_request('document_image', 'string'));
-    $file_extension = strtolower(substr(strrchr($filename,"."), 1));
+    $file_extension = strtolower(pathinfo($filename, PATHINFO_EXTENSION));
+    
     $ctype = '';
     switch( $file_extension ) {
         case "gif": $ctype="image/gif"; break;
@@ -108,8 +109,7 @@ if (rex_request('document_image', 'string', '') != '' && isset($files[rex_reques
         header('Content-type: ' . $ctype);
     }
 
-    $content = rex_file::get($path . basename(rex_request('document_image', 'string')));
-    echo $content;
+    rex_response::sendfile($path . basename(rex_request('document_image', 'string')), $ctype);
     exit;
 }
 

@@ -14,6 +14,9 @@ Ja, Du kannst das Verzeichnis auch z.B. **docs** nennen, musst dann aber in der 
 Ganz einfach, alle Dateien des documentation-Plugins übernehmen 
 **ausser** das Verzeichnis **docs**, und der Datei **package.yml**!
 
+* **Wie kann ich meine Dokumentation automatisch mit meinem Addon installieren und aktivieren?**
+Dazu musst Du die package.yml deines Addons erweitern um den Parameter **system_plugins**. Beispiel hier im Demo-Addon [package.yml](https://github.com/FriendsOfREDAXO/demo_addon/blob/master/package.yml#L33-L35)
+
 ---
 
 &raquo; Weiter zur **[Markdown-Vorlage](_vorlage.md)**
