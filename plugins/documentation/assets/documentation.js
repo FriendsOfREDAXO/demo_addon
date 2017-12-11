@@ -63,9 +63,7 @@ function load_doc(elem) {
                     $(this).addClass('current');
                 }
             });
-            if (history.pushState) {
-                history.pushState({}, null, $(elem).attr('href'));
-            }
+            document.location.href = $(elem).attr('href');
         }
     }).fail(function(jqXHR, textStatus) {
         $($target).html('<div class="alert alert-danger">AJAX-Error:<br>' + textStatus + '</div>');
