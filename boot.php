@@ -26,8 +26,6 @@ if (rex::isBackend() && is_object(rex::getUser())) {
 if (rex::isBackend() && rex::getUser()) {
 
     // Die style.css überall im Backend einbinden
-    // Es wird eine Versionsangabe angehängt, damit nach einem neuen Release des Addons die Datei nicht
-    // aus dem Browsercache verwendet, sondern frisch geladen wird
     rex_view::addCssFile($this->getAssetsUrl('css/style.css'));
 
     // Die script.js nur auf der Unterseite »config« des Addons einbinden
