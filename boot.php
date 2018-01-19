@@ -28,10 +28,10 @@ if (rex::isBackend() && rex::getUser()) {
     // Die style.css überall im Backend einbinden
     // Es wird eine Versionsangabe angehängt, damit nach einem neuen Release des Addons die Datei nicht
     // aus dem Browsercache verwendet, sondern frisch geladen wird
-    rex_view::addCssFile($this->getAssetsUrl('css/style.css?v=' . $this->getVersion()));
+    rex_view::addCssFile($this->getAssetsUrl('css/style.css'));
 
     // Die script.js nur auf der Unterseite »config« des Addons einbinden
     if (rex_be_controller::getCurrentPagePart(2) == 'config') {
-        rex_view::addJsFile($this->getAssetsUrl('js/script.js?v=' . $this->getVersion()));
+        rex_view::addJsFile($this->getAssetsUrl('js/script.js'));
     }
 }
