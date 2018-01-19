@@ -22,7 +22,7 @@ page:
 # Abhängigkeiten
 # Anforderungen ans System oder anderere AddOns, um dieses AddOn installieren oder update zu können
 requires:
-    redaxo: '^5.1' # benötigt mindestens REDAXO 5.1
+    redaxo: '^5.3' # benötigt mindestens REDAXO 5.3
     packages:
         media_manager: '^2.0.1' # benötigt mindestens das Addon Media Manager 2.0.1
     php:
