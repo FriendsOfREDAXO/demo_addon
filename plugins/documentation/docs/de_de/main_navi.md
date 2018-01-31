@@ -1,16 +1,16 @@
 # Dokumentation-Dummy
 
-- Plugin `documentation`
-    - [Einführung](main_intro.md)
-    - [Ordner-Struktur](main_folder.md)
-- Plugin-Integration
-    - [Plugin integrieren](howto_copy.md)
-    - [Anpassungen](howto_customize.md)
-- Hilfe / FAQ
-    - [Wo finde ich Hilfe?](help_where.md)
-    - [FAQ-Liste](help_faq.md)
-- Sonstiges
-    - [Markdown Vorlage](_vorlage.md)
+* Plugin `documentation`
+  * [Einführung](main_intro.md)
+  * [Ordner-Struktur](main_folder.md)
+* Plugin-Integration
+  * [Plugin integrieren](howto_copy.md)
+  * [Anpassungen](howto_customize.md)
+* Hilfe / FAQ
+  * [Wo finde ich Hilfe?](help_where.md)
+  * [FAQ-Liste](help_faq.md)
+* Sonstiges
+  * [Markdown Vorlage](_vorlage.md)
 
 ---
 

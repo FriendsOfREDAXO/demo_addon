@@ -96,7 +96,7 @@ if (rex_request('document_image', 'string', '') != '' && isset($files[rex_reques
 
     $filename = basename(rex_request('document_image', 'string'));
     $file_extension = strtolower(pathinfo($filename, PATHINFO_EXTENSION));
-    
+
     $ctype = '';
     switch( $file_extension ) {
         case "gif": $ctype="image/gif"; break;
@@ -154,10 +154,14 @@ if (class_exists('rex_markdown')) {
 
 // Links in Navigation ersetzen
 if ($ajax <> 'true') {
-    $search = '#<li><a href="#';
-    $replace = '<li><a href="index.php?page=' . $addon . '/' . $docplugin . '&document_file=';
-    $navi = preg_replace($search, $replace, $navi);
-    $navi = str_replace('document_file=' . $file .'"', 'document_file=' . $file .'" class="current"', $navi);
+    foreach ($files as $i_file) {
+        $file = rex_request('document_file', 'string', $default_intro);
+        $current = ($i_file == $file) ? ' current' : '';
+        $search = '#href="(' . $i_file . ')"#';
+        $replace = 'href="index.php?page=' . $addon . '/' . $docplugin . '&document_file=$1"';
+        $navi = preg_replace($search, $replace, $navi);
+        $navi = str_replace('document_file=' . $i_file .'"', 'document_file=' . $i_file .'" class="doclink' . $current . '"', $navi);
+    }
 }
 
 // Links im Inhalt ersetzen
