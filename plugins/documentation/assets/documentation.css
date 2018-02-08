@@ -138,3 +138,13 @@
   content: "\f08e";
   margin-left: 5px;
 }
+
+/* Sprachwähler */
+.addon_documentation #doclang {
+  width: 70px;
+  position: absolute;
+  right: 20px;
+  top: 6px;
+  padding: 5px 0;
+}
+

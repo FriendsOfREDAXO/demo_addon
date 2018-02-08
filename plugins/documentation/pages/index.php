@@ -30,43 +30,42 @@ $lang = rex::getUser()->getLanguage();
 if ($plugin->getProperty('documentationlang')) {
     $lang = $plugin->getProperty('documentationlang');
     $_SESSION['addon_documentation']['doclang'] = $lang;
-} else {
+}
+
 // Bei mehreren verfügbaren Sprachen Sprachwähler aufbauen
-    $docs = [];
-    $path = rex_path::plugin($addon, $docplugin , 'docs/');
-    foreach (scandir($path) as $i_file) {
-        if ($i_file != '.' && $i_file != '..') {
-            if (is_dir($path . $i_file) && file_exists($path . $i_file . '/' . $default_navi)) {
-                $docs[$i_file] = $i_file;
-            }
+$docs = [];
+$path = rex_path::plugin($addon, $docplugin , 'docs/');
+foreach (scandir($path) as $i_file) {
+    if ($i_file != '.' && $i_file != '..') {
+        if (is_dir($path . $i_file) && file_exists($path . $i_file . '/' . $default_navi)) {
+         $docs[$i_file] = $i_file;
         }
     }
-    if (count($docs) > 1) {
-        if (isset($_SESSION['addon_documentation']['doclang'])) {
-            $lang = $_SESSION['addon_documentation']['doclang'];
-        }
-        if ($doclang) {
-            $lang = $doclang;
-        }
-        $sel_lang = new rex_select();
-        $sel_lang->setStyle('class="form-control"');
-        $sel_lang->setName('doclang');
-        $sel_lang->setId('doclang');
-        $sel_lang->setSize(1);
-        $sel_lang->setSelected($lang);
-        foreach ($docs as $l) {
-            $sel_lang->addOption($l, $l);
-        }
-        //$langselect = $sel_lang->get();
-        $langselect = '
-        <form action="' . rex_url::currentBackendPage() . '" method="post">
-        <input type="hidden" name="formsubmit" value="1" />
-            ' . $sel_lang->get() . '
-        </form>
-        ';
-        if ($formsubmit) {
-            $_SESSION['addon_documentation']['doclang'] = $lang;
-        }
+}
+if (count($docs) > 1) {
+    if (isset($_SESSION['addon_documentation']['doclang'])) {
+        $lang = $_SESSION['addon_documentation']['doclang'];
+    }
+    if ($doclang) {
+        $lang = $doclang;
+    }
+    $sel_lang = new rex_select();
+    $sel_lang->setStyle('class="form-control"');
+    $sel_lang->setName('doclang');
+    $sel_lang->setId('doclang');
+    $sel_lang->setSize(1);
+    $sel_lang->setSelected($lang);
+    foreach ($docs as $l) {
+        $sel_lang->addOption($l, $l);
+    }
+    $langselect = '
+    <form action="' . rex_url::currentBackendPage() . '" method="post">
+    <input type="hidden" name="formsubmit" value="1" />
+        ' . $sel_lang->get() . '
+    </form>
+    ';
+    if ($formsubmit) {
+        $_SESSION['addon_documentation']['doclang'] = $lang;
     }
 }
 
@@ -197,7 +196,7 @@ $content = $fragment->parse('core/page/section.php');
 echo '
 <section class="addon_documentation">
     <div class="row">
-        <div class="col-md-4 addon_documentation-navi">' . $navi . $langselect . '
+        <div class="col-md-4 addon_documentation-navi">' . $langselect . $navi . '
         </div>
         <div class="col-md-8 addon_documentation-content">' . $content . '
         </div>

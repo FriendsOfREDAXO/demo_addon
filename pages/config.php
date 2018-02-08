@@ -3,8 +3,12 @@
 $content = '';
 $buttons = '';
 
+$csrfToken = rex_csrf_token::factory('demo_addon');
+
 // Einstellungen speichern
-if (rex_post('formsubmit', 'string') == '1') {
+if (rex_post('formsubmit', 'string') == '1' && !$csrfToken->isValid()) {
+    echo rex_view::error(rex_i18n::msg('csrf_token_invalid'));
+} elseif (rex_post('formsubmit', 'string') == '1') {
     $this->setConfig(rex_post('config', [
         ['url', 'string'],
         ['checkbox', 'string'],
@@ -128,7 +132,7 @@ $n = [];
 $n['label'] = '<label for="REX_LINK_1_NAME">' . $this->i18n('config_article') . '</label>';
 $n['field'] = '
 <div class="rex-js-widget rex-js-widget-link">
-	<div class="input-group">	
+	<div class="input-group">
 			<input class="form-control" type="text" name="REX_LINK_NAME[1]" value="'.$artname.'" id="REX_LINK_1_NAME" readonly="readonly" />
 			<input type="hidden" name="config[article]" id="REX_LINK_1" value="' . $this->getConfig('article') . '" />
 
@@ -163,7 +167,7 @@ $formElements[] = $n;
 
 $fragment = new rex_fragment();
 $fragment->setVar('elements', $formElements, false);
-$content .= $fragment->parse('core/form/container.php');	
+$content .= $fragment->parse('core/form/container.php');
 
 // Seitenauswahl
 $formElements = [];
@@ -204,6 +208,7 @@ $output = $fragment->parse('core/page/section.php');
 $output = '
 <form action="' . rex_url::currentBackendPage() . '" method="post">
 <input type="hidden" name="formsubmit" value="1" />
+    ' . $csrfToken->getHiddenField() . '
     ' . $output . '
 </form>
 ';
