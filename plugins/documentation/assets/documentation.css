@@ -61,6 +61,7 @@
   border-top: 1px solid #ddd;
 }
 
+/* Tabellen */
 .addon_documentation table {
   width: 100%;
   max-width: 100%;
@@ -69,7 +70,7 @@
   margin: 20px 0 30px;
 }
 .addon_documentation th {
-  background: #f7f7f7;
+  background: #ddd;
   border-bottom: 2px solid #ddd;
   border-collapse: separate;
 }
@@ -81,25 +82,11 @@
   vertical-align: top;
   font-size: 13px;
 }
-
-.addon_documentation a[href^="http://"],
-.addon_documentation a[href^="https://"] {
-  margin-right: 5px;
+.addon_documentation tr:nth-child(even) {
+  background: #f7f7f7;
 }
-.addon_documentation a[href^="http://"] sup,
-.addon_documentation a[href^="https://"] sup {
-  font-size: 0.8em;
-}
-
 .addon_documentation table tr:hover {
-  background: #fafafa;
-}
-
-.addon_documentation-navi a.current {
-  font-weight: bold;
-}
-.addon_documentation-navi a:focus {
-  text-decoration: none;
+  background: #dff5ee;
 }
 
 /* Navigation */
@@ -129,6 +116,13 @@
   margin-right: 10px;
 }
 
+.addon_documentation-navi a.current {
+  font-weight: bold;
+}
+.addon_documentation-navi a:focus {
+  text-decoration: none;
+}
+
 /* externe Links */
 .addon_documentation a.extern {
   margin-right: 5px;
@@ -139,6 +133,15 @@
   margin-left: 5px;
 }
 
+.addon_documentation a[href^="http://"],
+.addon_documentation a[href^="https://"] {
+  margin-right: 5px;
+}
+.addon_documentation a[href^="http://"] sup,
+.addon_documentation a[href^="https://"] sup {
+  font-size: 0.8em;
+}
+
 /* Sprachwähler */
 .addon_documentation #doclang {
   width: 70px;
@@ -147,4 +150,3 @@
   top: 6px;
   padding: 5px 0;
 }
-
