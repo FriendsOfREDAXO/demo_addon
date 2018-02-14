@@ -13,7 +13,7 @@ function getUrlParameter(sParam, url) {
 }
 
 // Back/Next Browser Button
-window.onpopstate = function(e) {
+window.onpopstate = function (e) {
   var character = e.state;
   if (character == null) {
     $document = getUrlParameter("document_file", document.location.href);
@@ -45,7 +45,7 @@ function load_doc(elem, dopush) {
   $($doctitle).html($document);
 
   $($target).html(
-    '<div style="text-align:center;"><i class="fa fa-cog fa-spin fa-2x fa-fw"></i></div>'
+    '<div style="text-align:center;color:#9ba4b1;"><i class="fa fa-cog fa-spin fa-2x fa-fw"></i></div>'
   );
 
   $.ajax({
@@ -53,16 +53,16 @@ function load_doc(elem, dopush) {
     url: $url,
     cache: true,
     dataType: "html",
-    success: function(response) {
+    success: function (response) {
       $($target).html(response);
       // Externe Links in neuem Fenster
       $("section.addon_documentation")
         .find("a")
-        .each(function() {
+        .each(function () {
           var a = new RegExp("/" + window.location.host + "/");
           if (!a.test(this.href) && this.href) {
             $(this).addClass("extern");
-            $(this).click(function(event) {
+            $(this).click(function (event) {
               event.preventDefault();
               event.stopPropagation();
               window.open(this.href, "_blank");
@@ -70,7 +70,7 @@ function load_doc(elem, dopush) {
           }
         });
       // Bei internen Links Dokument laden
-      $("div.addon_documentation-content a.doclink").on("click", function(
+      $("div.addon_documentation-content a.doclink").on("click", function (
         event,
         container
       ) {
@@ -83,7 +83,7 @@ function load_doc(elem, dopush) {
       // Link in der Navigaton hervorheben
       $("div.addon_documentation-navi")
         .find('a[href$="' + $document + '"]')
-        .each(function() {
+        .each(function () {
           if ($(this).html() != "") {
             $(this).addClass("current");
           }
@@ -92,22 +92,22 @@ function load_doc(elem, dopush) {
         history.pushState($document, $document, $(elem).attr("href"));
       }
     }
-  }).fail(function(jqXHR, textStatus) {
+  }).fail(function (jqXHR, textStatus) {
     $($target).html(
-      '<div class="alert alert-danger">AJAX-Error:<br>' + textStatus + "</div>"
+      '<div class="alert alert-danger">AJAX-Error: ' + textStatus + '<br>' + $url + "</div>"
     );
   });
 }
 
-$(document).on("rex:ready", function(event, container) {
+$(document).on("rex:ready", function (event, container) {
   // Externe Links in neuem Fenster
   $("section.addon_documentation")
     .find("a")
-    .each(function() {
+    .each(function () {
       var a = new RegExp("/" + window.location.host + "/");
       if (!a.test(this.href) && this.href) {
         $(this).addClass("extern");
-        $(this).click(function(event) {
+        $(this).click(function (event) {
           event.preventDefault();
           event.stopPropagation();
           window.open(this.href, "_blank");
@@ -118,7 +118,7 @@ $(document).on("rex:ready", function(event, container) {
   // Links in der Navigation, interne Links in Dokumenten
   $(
     "div.addon_documentation-navi a, div.addon_documentation-content a.doclink"
-  ).on("click", function(event, container) {
+  ).on("click", function (event, container) {
     if (!$(this).hasClass("extern")) {
       load_doc($(this), true);
     }
@@ -127,7 +127,7 @@ $(document).on("rex:ready", function(event, container) {
   });
 
   // Language select
-  $("#doclang").change(function() {
+  $("#doclang").change(function () {
     this.form.submit();
   });
 }); // end rex:ready
