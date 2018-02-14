@@ -7,7 +7,7 @@ $ajax = rex_request('ajax', 'string', '');
 $doclang = rex_request('doclang', 'string', '');
 $formsubmit = rex_request('formsubmit', 'string', '');
 if ($formsubmit) {
-    $_SESSION['addon_documentation']['doclang'] = $doclang;
+    rex_set_session('addon_documentation[doclang]', $doclang);
 }
 
 // Addon/Plugin-Informationen
@@ -32,8 +32,8 @@ $lang = rex::getUser()->getLanguage();
 // Feste Sprache der Dokumentation aus package.yml
 if ($plugin->getProperty('documentationlang')) {
     $lang = $plugin->getProperty('documentationlang');
-    if (!isset($_SESSION['addon_documentation']['doclang'])) {
-        $_SESSION['addon_documentation']['doclang'] = $lang;
+    if (!rex_session('addon_documentation[doclang]', 'string', '')) {
+        rex_set_session('addon_documentation[doclang]', $lang);
     }
 }
 
@@ -51,8 +51,8 @@ if (count($docs) > 1) {
     if ($doclang) {
         $lang = $doclang;
     }
-    if (isset($_SESSION['addon_documentation']['doclang'])) {
-        $lang = $_SESSION['addon_documentation']['doclang'];
+    if (rex_session('addon_documentation[doclang]', 'string', '')) {
+        $lang = rex_session('addon_documentation[doclang]', 'string', '');
     }
     $sel_lang = new rex_select();
     $sel_lang->setStyle('class="form-control"');
@@ -84,9 +84,9 @@ if ($ajax <> 'true') {
             }
         }
     }
-    $_SESSION['addon_documentation']['files'] = $files;
+    rex_set_session('addon_documentation[files]', $files);
 } else {
-    $files = $_SESSION['addon_documentation']['files'];
+    $files = rex_session('addon_documentation[files]', 'array', null);
 }
 
 // Bild ausgeben wenn Parameter document_image gesetzt ist und die Datei existiert
