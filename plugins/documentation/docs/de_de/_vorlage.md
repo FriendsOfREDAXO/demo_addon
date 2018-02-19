@@ -173,6 +173,16 @@ Für Hinweise könnten wir die Blockquote-Formatierung verwenden.
     - [Wo finde ich Hilfe?](help_where.md) <sup><b>(in Arbeit)</b></sup>
     - [FAQ-Liste](help_faq.md) <sup><b>(offen)</b></sup>
 
+## Images
+
+<p style="text-align:center">
+![FriendsOfREDAXO](assets/for.png)
+</p>
+
+![FriendsOfREDAXO](assets/for.png)
+
+![FriendsOfREDAXO](assets/for_small.png)
+
 ---
 
 ## Markdown-Referenz

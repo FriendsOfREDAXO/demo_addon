@@ -23,5 +23,5 @@ Das Plugin `documentation` dient als Basis für eine Hilfe/Dokumentation für RE
 &raquo; Weiter zur **[Ordner-Struktur](main_folder.md)**
 
 <p style="text-align:center">
-![FriendsOfREDAXO](for.png)
+![FriendsOfREDAXO](assets/for.png)
 </p>

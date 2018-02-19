@@ -13,10 +13,13 @@ Neu
 * REDAXO-Version auf 5.5 gesetzt (CSRF-Schutz)
 * README.md angepasst
 * documentation-plugin
-  * Link-Handling optimiert, URL-Änderung jetzt über pushState (vorher window.location), Anpassung CSS
+  * Link-Handling optimiert, URL-Änderung jetzt über pushState (vorher window.location), Anpassungen CSS
   * Sprachwähler bei mehreren vorhanden Sprachen der Dokumentationen anzeigen. Position oben rechts in der Navigation.
+  * Image-Handling
+    * Images in Unterordner assets
+    * Intgegration von Images aus dem Unterordner möglich
   * Externe Links in der Navigation möglich
-  * Dokumentation Texte angepasst
+  * Dokumentation Texte angepasst, Beispiel Images in _vorlage.md, Bilder in Unterordner assets
 
 Bugfixes
 
