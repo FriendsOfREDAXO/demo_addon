@@ -101,7 +101,8 @@ if ($ajax <> 'true') {
 }
 
 // Bild ausgeben wenn Parameter document_image gesetzt ist und die Datei existiert
-if (rex_request('document_image', 'string', '') != '' && isset($files[rex_request('document_image', 'string')])) {
+$docimage = str_replace('./', '', rex_request('document_image', 'string', ''));
+if ($docimage != '' && isset($files[$docimage])) {
     while (ob_get_length()) {
         ob_end_clean();
     }
@@ -144,6 +145,10 @@ if ($content == '') {
 // ![Alt-Text](bildname.png)
 // ![Ein Screenshot](screenshot.png)
 foreach ($files as $i_file) {
+    $search = '#\!\[(.*)\]\((./' . $i_file . ')\)#';
+    $replace = '<img src="index.php?page='. $addon . '/' . $docplugin . '&document_image=$2" alt="$1" title="$1" style="max-width:100%" />';
+    $content = preg_replace($search, $replace, $content);
+    $navi = preg_replace($search, $replace, $navi);
     $search = '#\!\[(.*)\]\((' . $i_file . ')\)#';
     $replace = '<img src="index.php?page='. $addon . '/' . $docplugin . '&document_image=$2" alt="$1" title="$1" style="max-width:100%" />';
     $content = preg_replace($search, $replace, $content);
