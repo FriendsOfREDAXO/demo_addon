@@ -176,12 +176,12 @@ Für Hinweise könnten wir die Blockquote-Formatierung verwenden.
 ## Images
 
 <p style="text-align:center">
-![FriendsOfREDAXO](assets/for.png)
+![FriendsOfREDAXO](./assets/for.png)
 </p>
 
-![FriendsOfREDAXO](assets/for.png)
+![FriendsOfREDAXO](./assets/for.png)
 
-![FriendsOfREDAXO](assets/for_small.png)
+![FriendsOfREDAXO](./assets/for_small.png)
 
 ---
 
