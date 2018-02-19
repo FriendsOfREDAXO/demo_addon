@@ -3,6 +3,7 @@
   margin-top: 5px;
   margin-bottom: 20px;
 }
+
 .addon_documentation h2 {
   font-size: 16px;
   margin-top: 40px;
@@ -13,6 +14,7 @@
   padding: 13px 15px 10px;
   background: #eee;
 }
+
 .addon_documentation h3 {
   margin-top: 40px;
   margin-bottom: 5px;
@@ -22,6 +24,7 @@
   margin: 20px 0;
   background: #f3f6fb;
 }
+
 .addon_documentation blockquote h2 {
   margin: -10px -20px 20px;
   background: transparent;
@@ -37,13 +40,16 @@
   padding-bottom: 5px;
   padding-left: 16px;
 }
+
 .addon_documentation ul li {
   list-style-type: square;
   list-style-position: outside;
 }
+
 .addon_documentation ul ul {
   padding-top: 5px;
 }
+
 .addon_documentation ul ul li {
   list-style-type: circle;
   list-style-position: outside;
@@ -62,6 +68,7 @@
 }
 
 /* Tabellen */
+
 .addon_documentation table {
   width: 100%;
   max-width: 100%;
@@ -69,11 +76,12 @@
   border-bottom: 1px solid #ddd;
   margin: 20px 0 30px;
 }
+
 .addon_documentation th {
-  background: #ddd;
-  border-bottom: 2px solid #ddd;
+  background: #eee;
   border-collapse: separate;
 }
+
 .addon_documentation th,
 .addon_documentation td {
   border: 1px solid #ddd;
@@ -82,34 +90,41 @@
   vertical-align: top;
   font-size: 13px;
 }
+
 .addon_documentation tr:nth-child(even) {
   background: #f7f7f7;
 }
+
 .addon_documentation table tr:hover {
   background: #dff5ee;
 }
 
 /* Navigation */
+
 .addon_documentation-navi ul {
   margin-bottom: 10px;
   padding-left: 0;
 }
+
 .addon_documentation-navi ul li {
   list-style-type: none;
   background: #eee;
   padding: 0 15px;
   line-height: 40px;
 }
+
 .addon_documentation-navi ul {
   background: #fff;
   margin-left: -15px;
   margin-right: -15px;
 }
+
 .addon_documentation-navi ul li li {
   list-style-type: none;
   background: #fff;
   line-height: 30px;
 }
+
 .addon_documentation-navi ul li li:before {
   font-family: FontAwesome;
   content: "\f0a9";
@@ -119,14 +134,17 @@
 .addon_documentation-navi a.current {
   font-weight: bold;
 }
+
 .addon_documentation-navi a:focus {
   text-decoration: none;
 }
 
 /* externe Links */
+
 .addon_documentation a.extern {
   margin-right: 5px;
 }
+
 .addon_documentation a.extern:after {
   font-family: FontAwesome;
   content: "\f08e";
@@ -137,12 +155,14 @@
 .addon_documentation a[href^="https://"] {
   margin-right: 5px;
 }
+
 .addon_documentation a[href^="http://"] sup,
 .addon_documentation a[href^="https://"] sup {
   font-size: 0.8em;
 }
 
 /* Sprachwähler */
+
 .addon_documentation #doclang {
   width: 70px;
   position: absolute;

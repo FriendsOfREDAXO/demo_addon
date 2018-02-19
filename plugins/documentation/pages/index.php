@@ -1,4 +1,14 @@
 <?php
+function docsGlobRecursive($pattern, $flags = 0)
+{
+    $files = glob($pattern, $flags);
+    foreach (glob(dirname($pattern) . DIRECTORY_SEPARATOR . '*', GLOB_ONLYDIR|GLOB_NOSORT) as $dir)
+    {
+        $files = array_merge($files, docsGlobRecursive($dir . DIRECTORY_SEPARATOR . basename($pattern), $flags));
+    }
+    return $files;
+}
+
 $navi = '';
 $content = '';
 $langselect = '';
@@ -38,15 +48,14 @@ if ($plugin->getProperty('documentationlang')) {
 }
 
 // Bei mehreren verfügbaren Sprachen Sprachwähler aufbauen
-$docs = [];
 $path = rex_path::plugin($addon, $docplugin , 'docs/');
-foreach (scandir($path) as $i_file) {
-    if ($i_file != '.' && $i_file != '..') {
-        if (is_dir($path . $i_file) && file_exists($path . $i_file . '/' . $default_navi)) {
-         $docs[$i_file] = $i_file;
-        }
+$docs = [];
+foreach (glob($path . '*', GLOB_ONLYDIR) as $dir) {
+    if (file_exists($path . basename($dir) . '/' . $default_navi)) {
+        $docs[basename($dir)] = basename($dir);
     }
 }
+
 if (count($docs) > 1) {
     if ($doclang) {
         $lang = $doclang;
@@ -77,11 +86,13 @@ $path = rex_path::plugin($addon, $docplugin , 'docs/' . $lang . '/');
 // vorhandene Dateien ermitteln
 if ($ajax <> 'true') {
     $files = [];
-    if (file_exists($path) && is_dir($path)) {
-        foreach (scandir($path) as $i_file) {
-            if ($i_file != '.' && $i_file != '..') {
-                $files[$i_file] = $i_file;
-            }
+    $filetypes = ['*.md', '*.gif', '*.png', '*.jpg', '*.jpeg'];
+    $search = [$path, "\\"];
+    $replace = ['', '/'];
+    foreach ($filetypes as $mask) {
+	    foreach (docsGlobRecursive($path . $mask, GLOB_BRACE) as $filename) {
+            $filename = str_replace($search, $replace, $filename);
+            $files[$filename] = $filename;
         }
     }
     rex_set_session('addon_documentation[files]', $files);
@@ -95,7 +106,7 @@ if (rex_request('document_image', 'string', '') != '' && isset($files[rex_reques
         ob_end_clean();
     }
 
-    $filename = basename(rex_request('document_image', 'string'));
+    $filename = rex_request('document_image', 'string');
     $file_extension = strtolower(pathinfo($filename, PATHINFO_EXTENSION));
 
     $ctype = '';
@@ -110,7 +121,7 @@ if (rex_request('document_image', 'string', '') != '' && isset($files[rex_reques
         header('Content-type: ' . $ctype);
     }
 
-    rex_response::sendfile($path . basename(rex_request('document_image', 'string')), $ctype);
+    rex_response::sendfile($path . rex_request('document_image', 'string'), $ctype);
     exit;
 }
 
