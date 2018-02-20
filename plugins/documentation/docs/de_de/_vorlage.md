@@ -175,17 +175,22 @@ Für Hinweise könnten wir die Blockquote-Formatierung verwenden.
 
 ## Images
 
-<p style="text-align:center">
-![FriendsOfREDAXO](./assets/for.png)
-</p>
+Images werden wie folgt in Markdown-Dateien eingebunden:
 
-![FriendsOfREDAXO](./assets/for.png)
+&#33;&#91;Alt-Text&#93;&#40;bilddatei.png&#41;
 
-![FriendsOfREDAXO](./assets/for_small.png)
+**Beispiel**
+
+&#33;&#91;FriendsOfREDAXO&#93;&#40;assets/for.png&#41;
+
+**Ausgabe**
+
+![FriendsOfREDAXO](assets/for.png)
 
 ---
 
 ## Markdown-Referenz
 
-[daringfireball.net/projects/markdown/syntax](https://daringfireball.net/projects/markdown/syntax)
-[markdown.de/](http://markdown.de/)
+[Daring Fireball: Markdown Syntax Documentation](https://daringfireball.net/projects/markdown/syntax)
+[markdown.de · Markdown Syntax-Dokumentation](http://markdown.de/)
+[Mastering Markdown · GitHub Guides](https://guides.github.com/features/mastering-markdown/)

@@ -4,14 +4,16 @@
 Du kannst Fehler gerne auf [GitHub](https://github.com/FriendsOfREDAXO/demo_addon) per Pullrequest oder einfach als Issue melden
 
 * **Wo finde ich mehr Informationen zur Markdown Syntax?**
-Beispiele findest Du in der [Markdown-Vorlage](_vorlage.md) oder hier [https://daringfireball.net/projects/markdown/syntax](https://daringfireball.net/projects/markdown/syntax)
-[http://markdown.de/](http://markdown.de/)
+Beispiele findest Du in der [Markdown-Vorlage](_vorlage.md) oder hier
+[Daring Fireball: Markdown Syntax Documentation](https://daringfireball.net/projects/markdown/syntax)
+[markdown.de · Markdown Syntax-Dokumentation](http://markdown.de/)
+[Mastering Markdown · GitHub Guides](https://guides.github.com/features/mastering-markdown/)
 
 * **Kann ich dem Pluginverzeichnis auch einen anderen Namen als `documentation` vergeben?**
 Ja, Du kannst das Verzeichnis auch z.B. **docs** nennen, musst dann aber in der package.yml den Eintrag **package** auf `package: DeinAddonName/docs` anpassen.
 
 * **Es gibt eine neue Version des Plugins, wie kann ich mein plugin updaten?**
-Ganz einfach, alle Dateien des documentation-Plugins übernehmen 
+Ganz einfach, alle Dateien des documentation-Plugins übernehmen
 **ausser** das Verzeichnis **docs**, und der Datei **package.yml**!
 
 * **Wie kann ich meine Dokumentation automatisch mit meinem Addon installieren und aktivieren?**
