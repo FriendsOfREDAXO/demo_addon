@@ -131,6 +131,10 @@
   margin-right: 10px;
 }
 
+.addon_documentation-navi ul li li.current:before {
+  color: #2674b2;
+}
+
 .addon_documentation-navi a.current {
   font-weight: bold;
 }
