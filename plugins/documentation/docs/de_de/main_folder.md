@@ -3,25 +3,25 @@
 ## Struktur
 
 - assets
-    - documentation.css
-    - documentation.js
+  - documentation.css
+  - documentation.js
 - docs
-    - `de_de`
-        - `main_intro.md`
-        - `main_navi.md`
-        - ...
-    - en_gb
+  - `de_de`
+     - `main_intro.md`
+     - `main_navi.md`
+     - ...
+  - en_gb
 - lang
-    - de_de.lang
-    - en_gb.lang
+  - de_de.lang
+  - en_gb.lang
 - pages
-    - index.php
-
+  - index.php
 - boot.php
 - `package.yml`
 - `README.md`
 
-> **Hinweis:**<br>Die für die Dokumentation wichtigen bzw. anzupassenden Verzeichnisse und Dateien sind `hervorgehoben`.
+> **Hinweis:**
+> Die für die Dokumentation wichtigen bzw. anzupassenden Verzeichnisse und Dateien sind `hervorgehoben`.
 
 Verzeichnis / Datei|Beschreibung
 ------ | ------
@@ -42,7 +42,8 @@ boot.php|Laden der Addon-Ressourcen
 `package.yml`|Addon-Konfiguration, hier können auch die Default-Dateinamen angepasst werden
 `README.md`|Readme-Datei die auf Github und im REDAXO-Backend (Addon-Hilfe) angezeigt wird
 
-> **Hinweis:**<br>Alle Dateien der Dokumentation liegen in _einem_ Verzeichnis z.B. `/docs/de_de/`. Bei der Namensvergabe für die Dateien empfiehlt es sich die zusammengehörigen Dateien zu gruppieren z.B. `main_*.md` ... `howto_*.md`.
+> **Hinweis:**
+> Alle Dateien der Dokumentation liegen in _einem_ Verzeichnis z.B. `/docs/de_de/`. Bei der Namensvergabe für die Dateien empfiehlt es sich die zusammengehörigen Dateien zu gruppieren z.B. `main_*.md` ... `howto_*.md`.
 
 ---
 

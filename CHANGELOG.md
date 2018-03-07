@@ -1,6 +1,6 @@
 # Changelog
 
-**Version 1.1.0 // xx.xx.2018**
+## Version 1.1.0 // xx.xx.2018
 
 Neu
 
@@ -25,6 +25,6 @@ Bugfixes
 
 * keine
 
-**Version 1.0.0 // 28.11.2017**
+## Version 1.0.0 // 28.11.2017
 
 * Erste Veröffentlichung des Addons

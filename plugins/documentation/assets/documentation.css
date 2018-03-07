@@ -67,6 +67,14 @@
   border-top: 1px solid #ddd;
 }
 
+/* Listen */
+
+.addon_documentation ul ul,
+.addon_documentation ul ul ul,
+.addon_documentation ul ul ul ul {
+  margin-bottom: 0;
+}
+
 /* Tabellen */
 
 .addon_documentation table {

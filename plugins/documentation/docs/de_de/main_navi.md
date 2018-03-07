@@ -14,7 +14,7 @@
 
 ---
 
-**Credits**
+## Credits
 
 @dergel (Jan Kristinus)
 @tyrant88 (Norbert Micheel)
