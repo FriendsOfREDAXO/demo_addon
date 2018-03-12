@@ -1,27 +1,28 @@
 # Markdown-Vorlage - Seitenüberschrift
 
--   [Kopfbereich](#kopfbereich)
--   [Überschriften](#ueberschriften)
--   [Links](#links)
--   [Listen](#listen)
--   [Tabellen](#tabellen)
--   [Code](#code)
--   [Hinweise](#hinweise)
--   [Anker 3](#anker-3)
-    - [Anker 3a](#anker-3a)
-    - [Anker 3b](#anker-3b)
-    - [Anker 3c](#anker-3c)
--   [Anker 4](#anker-4)
+- [Kopfbereich](#kopfbereich)
+- [Überschriften](#ueberschriften)
+- [Links](#links)
+- [Listen](#listen)
+- [Tabellen](#tabellen)
+- [Code](#code)
+- [Hinweise](#hinweise)
+- [Anker 3](#anker-3)
+  - [Anker 3a](#anker-3a)
+  - [Anker 3b](#anker-3b)
+  - [Anker 3c](#anker-3c)
+- [Anker 4](#anker-4)
 
 ---
 
 <a name="kopfbereich"></a>
+
 ## Kopfbereich
 
 1. Seitenüberschrift als h1 auszeichnen
 2. TOC Liste mit Anker erstellen, Die erste Ebene wird im Text mit `h2`, die zweite Ebene mit `h3` ausgezeichnet.
 
-**Beispiel Kopfbereich**
+### Beispiel Kopfbereich
 
     # Seitenüberschrift
 
@@ -34,13 +35,13 @@
         - [Anker 3c](#anker-3c)
     - [Anker 4](#anker-4)
 
-
 <a name="ueberschriften"></a>
+
 ## Überschriften mit Anker setzen
 
 Die Sprunganker müssen an der betreffenden Stelle gesetzt werden.
 
-**Beispiel Sprunganker**
+### Beispiel Sprunganker
 
     <a name="anker-zur-ueberschrift"></a>
     ## Überschrift
@@ -48,31 +49,33 @@ Die Sprunganker müssen an der betreffenden Stelle gesetzt werden.
 ---
 
 <a name="links"></a>
+
 ## Links
 
 Der verlinkte Text wird in eckige Klammern gesetzt, der Link dahinter in runden Klammern.
 
-**Beispiel Link**
+### Beispiel Link
 
     [Linktitel](markdown-datei.md)
 
-**Ausgabe Link**
+### Ausgabe Link
 
 [Linktitel](markdown-datei.md)
 
 ---
 
 <a name="listen"></a>
+
 ## Listen
 
-**Beispiel Liste**
+### Beispiel Liste
 
     - Listenpunkt 1
     - Listenpunkt 2
     - Listenpunkt 3
     - Listenpunkt 4
 
-**Ausgabe Liste**
+### Ausgabe Liste
 
 - Listenpunkt 1
 - Listenpunkt 2
@@ -93,7 +96,7 @@ Der verlinkte Text wird in eckige Klammern gesetzt, der Link dahinter in runden 
     3. Listenpunkt 3
     4. Listenpunkt 4
 
-**Ausgabe Liste**
+### Ausgabe Liste
 
 1. Listenpunkt 1
 2. Listenpunkt 2
@@ -103,9 +106,10 @@ Der verlinkte Text wird in eckige Klammern gesetzt, der Link dahinter in runden 
 ---
 
 <a name="tabellen"></a>
+
 ## Tabellen
 
-**Beispiel Tabelle**
+### Beispiel Tabelle
 
 ```
 Alt | Neu
@@ -113,7 +117,7 @@ Alt | Neu
 `$REX['SERVERNAME']` | `rex::getServername()`
 ```
 
-**Ausgabe Tabelle**
+### Ausgabe Tabelle
 
 | Alt                  | Neu                    |
 | -------------------- | ---------------------- |
@@ -122,9 +126,10 @@ Alt | Neu
 ---
 
 <a name="code"></a>
+
 ## Code
 
-**Beispiel Code Block**
+### Beispiel Code Block
 
 ```php
     <?php
@@ -133,27 +138,27 @@ Alt | Neu
     $article = rex_article::get();
 ```
 
-
-**Beispiel Code Inline**
+### Beispiel Code Inline
 
 	Code innerhalb eines Text wird `ganz normal` mit Backticks ausgezeichnet.
 
-**Ausgabe Code Inline**
+### Ausgabe Code Inline
 
 Code innerhalb eines Text wird `ganz normal` mit Backticks ausgezeichnet.
 
 ---
 
 <a name="hinweise"></a>
+
 ## Hinweise
 
 Für Hinweise könnten wir die Blockquote-Formatierung verwenden.
 
-**Beispiel Hinweis**
+### Beispiel Hinweis
 
     > **Hinweis:** Aliquam arcu lectus, imperdiet sollicitudin vehicula ultricies, pellentesque at nunc. Pellentesque ut consectetur nisl. In finibus efficitur turpis, posuere facilisis dui tristique ac.
 
-**Ausgabe Hinweis**
+### Ausgabe Hinweis
 
 > **Hinweis:** Aliquam arcu lectus, imperdiet sollicitudin vehicula ultricies, pellentesque at nunc. Pellentesque ut consectetur nisl. In finibus efficitur turpis, posuere facilisis dui tristique ac.
 
@@ -161,7 +166,7 @@ Für Hinweise könnten wir die Blockquote-Formatierung verwenden.
 
 ## Kennzeichnung von offenen Punkten bzw. in Arbeit
 
-**Beispiel**
+### Beispiel
 
     - Hilfe / FAQ
         - [Wo finde ich Hilfe?](help_where.md) <sup><b>(in Arbeit)</b></sup>
@@ -170,8 +175,8 @@ Für Hinweise könnten wir die Blockquote-Formatierung verwenden.
 **Ausgabe **
 
 - Hilfe / FAQ
-    - [Wo finde ich Hilfe?](help_where.md) <sup><b>(in Arbeit)</b></sup>
-    - [FAQ-Liste](help_faq.md) <sup><b>(offen)</b></sup>
+  - [Wo finde ich Hilfe?](help_where.md) <sup><b>(in Arbeit)</b></sup>
+  - [FAQ-Liste](help_faq.md) <sup><b>(offen)</b></sup>
 
 ## Images
 
@@ -179,11 +184,11 @@ Images werden wie folgt in Markdown-Dateien eingebunden:
 
 &#33;&#91;Alt-Text&#93;&#40;bilddatei.png&#41;
 
-**Beispiel**
+### Beispiel
 
 &#33;&#91;FriendsOfREDAXO&#93;&#40;assets/for.png&#41;
 
-**Ausgabe**
+### Ausgabe
 
 ![FriendsOfREDAXO](assets/for.png)
 

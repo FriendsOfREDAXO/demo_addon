@@ -14,9 +14,9 @@ Das Plugin `documentation` dient als Basis für eine Hilfe/Dokumentation für RE
 
 ## Systemvoraussetzungen
 
-* `PHP >= 5.6`
-* `MySQL >= 5.0`
-* `REDAXO >= 5.0`
+- `PHP >= 5.6`
+- `MySQL >= 5.0`
+- `REDAXO >= 5.0`
 
 ---
 

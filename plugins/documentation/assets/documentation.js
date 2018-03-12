@@ -34,9 +34,13 @@ window.onpopstate = function (e) {
 
 // Dokument per Ajax laden
 function load_doc(elem, dopush) {
+  $("div.addon_documentation-navi li").removeClass("current");
   $("div.addon_documentation-navi a").removeClass("current");
   $(elem).addClass("current");
-  $("html, body").animate({ scrollTop: 0 }, 200);
+  $(elem).parent().addClass("current");
+  $("html, body").animate({
+    scrollTop: 0
+  }, 200);
 
   $url = $(elem).attr("href") + "&ajax=true";
   $target = $("div.addon_documentation-content").find("div.panel-body");
@@ -86,6 +90,7 @@ function load_doc(elem, dopush) {
         .each(function () {
           if ($(this).html() != "") {
             $(this).addClass("current");
+            $(this).parent().addClass("current");
           }
         });
       if (dopush) {
@@ -125,9 +130,14 @@ $(document).on("rex:ready", function (event, container) {
     event.preventDefault();
     return false;
   });
+  // Link in Navigation hervorheben
+  $("div.addon_documentation-navi a.current").each(function () {
+    $(this).parent().addClass("current");
+  });
 
   // Language select
   $("#doclang").change(function () {
     this.form.submit();
   });
+
 }); // end rex:ready

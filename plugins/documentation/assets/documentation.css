@@ -67,6 +67,14 @@
   border-top: 1px solid #ddd;
 }
 
+/* Listen */
+
+.addon_documentation ul ul,
+.addon_documentation ul ul ul,
+.addon_documentation ul ul ul ul {
+  margin-bottom: 0;
+}
+
 /* Tabellen */
 
 .addon_documentation table {
@@ -129,6 +137,10 @@
   font-family: FontAwesome;
   content: "\f0a9";
   margin-right: 10px;
+}
+
+.addon_documentation-navi ul li li.current:before {
+  color: #2674b2;
 }
 
 .addon_documentation-navi a.current {

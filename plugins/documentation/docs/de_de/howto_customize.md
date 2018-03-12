@@ -1,12 +1,11 @@
 # Anpassungen
 
-> ## Inhalte
-> * [Anpassen der `package.yml`](#package)
-> * [Anpassen der `README.md`](#readme)
-> * [Dokumentation](#dokumentation)
-
+* [Anpassen der `package.yml`](#package)
+* [Anpassen der `README.md`](#readme)
+* [Dokumentation](#dokumentation)
 
 <a name="package"></a>
+
 ## Anpassen der `package.yml`
 
 Beispiel:
@@ -25,7 +24,8 @@ Beispiel:
         icon: rex-icon fa-book
         perm: admin[]
 
-> **Hinweis:**<br>Die `package.yml` sollte komplett an dein Addon und deine Dokumentation angepasst sein.<br>Wichtig ist es den Eintrag **package** anzupassen da sonst die Installation des Plugins nicht funktioniert!
+> **Hinweis:**
+> Die `package.yml` sollte komplett an dein Addon und deine Dokumentation angepasst sein. Wichtig ist es den Eintrag **package** anzupassen da sonst die Installation des Plugins nicht funktioniert!
 
 Eintrag|Beschreibung
 ------ | ------
@@ -33,18 +33,19 @@ package|`demo_addon/documentation` muss angepasst werden in `DeinAddonName/docum
 version|Versionsnummer deiner Dokumentation
 author|Angaben über den Autor
 supportpage|Supportpage für dein Addon
-documentationlang|Sprache der Dokumentation _(optional)_<br>Standardmässig wird die bei dem Benutzer eingestellte Backendsprache verwendet.<br>Bei mehreren vorhandenen Sprachen wird ein Sprachwähler angezeigt.<br>Wenn es die Dokumentation aber nur in einer Sprache gibt dann sollte hier die Sprache angegeben werden.
-defaultnavi|Default-Dateiname für die Navigation<br>Default ist `main_navi.md` wenn nichts angegeben wird
-defaultintro|Default-Dateiname für die Einstiegsseite<br>Default ist `main_intro.md` wenn nichts angegeben wird
+documentationlang|Sprache der Dokumentation _(optional)_ Standardmässig wird die bei dem Benutzer eingestellte Backendsprache verwendet. Bei mehreren vorhandenen Sprachen wird ein Sprachwähler angezeigt. Wenn es die Dokumentation aber nur in einer Sprache gibt dann sollte hier die Sprache angegeben werden.
+defaultnavi|Default-Dateiname für die Navigation. Default ist `main_navi.md` wenn nichts angegeben wird
+defaultintro|Default-Dateiname für die Einstiegsseite. Default ist `main_intro.md` wenn nichts angegeben wird
 page: title|Dieser Text wird im Reiter deiner Addon-Navigation angezeigt
 
 ---
 
-
 <a name="readme"></a>
+
 ## Anpassen der `README.md`
 
-> **Hinweis:**<br>Die `README.md` wird auf Github und in der Addon-Verwaltung bei Klick auf das Fragezeichen angezeigt.
+> **Hinweis:**
+> Die `README.md` wird auf Github und in der Addon-Verwaltung bei Klick auf das Fragezeichen angezeigt.
 
 Beispiel:
 
@@ -61,8 +62,8 @@ Beispiel:
 
 ---
 
-
 <a name="dokumentation"></a>
+
 ## Dokumentation
 
 Jetzt geht es ans eingemachte. Im Verzeichnis `/docs/de_de/` kann diese bestehende Dokumentation vom Plugin `documentation` als Basis verwendet und entsprechend angepasst werden.
@@ -71,7 +72,8 @@ Weitere nützliche Informationen findest Du evtl. noch unter [Hilfe / FAQ](help_
 
 Viel Spass !!
 
-> **Hinweis:**<br>Alle Dateien der Dokumentation liegen in _einem_ Verzeichnis z.B. `/docs/de_de/`. Bei der Namensvergabe für die Dateien empfiehlt es sich die zusammengehörigen Dateien zu gruppieren z.B. `main_*.md` ... `howto_*.md`.
+> **Hinweis:**
+> Alle Dateien der Dokumentation liegen in _einem_ Verzeichnis z.B. `/docs/de_de/`. Bei der Namensvergabe für die Dateien empfiehlt es sich die zusammengehörigen Dateien zu gruppieren z.B. `main_*.md` ... `howto_*.md`.
 
 ---
 
