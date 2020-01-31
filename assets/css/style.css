@@ -1,2 +1,7 @@
+/*
+Demo-Addon
+Diese CSS-Datei wird in der boot.php des Addons demo_addon eingebunden (rex_view::addCssFile)
+*/
+
 .demo_addon {
 }

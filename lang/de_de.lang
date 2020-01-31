@@ -1,30 +1,59 @@
 # Da R5 nur noch mit UTF8 arbeitet, entfällt der "utf8"-Suffix
 
-# Die Keys sollten mit dem Addonnamen beginnen, da sie so innerhalb des Addons vereinfacht abgefragt werden können
+# Die Keys sollten mit dem Addonnamen (Addon-Präfix) beginnen, da sie so innerhalb des Addons vereinfacht abgefragt werden können
+# also hier Addon-Präfix 'demo_addon_'
 
-demo_addon_title = Demo-Addon
+# Bezeichnung in der REDAXO-Navigation -> translate:navititle in der package.yml
+demo_addon_navititle = Demo-Addon
 
-demo_addon_main = Hauptseite
-demo_addon_main_title = Demo-Addon Titel Hauptseite
-demo_addon_main_content = Inhalt Demo-Addon-Seite
+# Addon-Titel für alle Addon-Seiten, Addon-Präfix (hier `demo_addon_`) + `title` -> `demo_addon_title`
+demo_addon_title = REDAXO Demo-Addon
 
+# Eigener Block mit Bezeichnung in der REDAXO-Navigation
+# `navigation_` + addon-Name hier also `navigation_demo_addon`
+# in der package.yml dess Addons folgendes unter page angeben: `block: demo_addon`
+navigation_demo_addon = DEMO-Addon
+
+# Hauptnavi-Punkte des Addons
+demo_addon_main = Demo-Addon
 demo_addon_config = Einstellungen
+demo_addon_tables = Tabellen
+demo_addon_eps = Extension Points
+demo_addon_hidden_page = Versteckte Seite
+
+# Reiter demo_addon
+demo_addon_description = Beschreibung
+demo_addon_hidden_subpage = Versteckte Unterseite
+
+# Reiter Einstellungen
+demo_addon_config_rex_config_form = mit rex_config_form
+demo_addon_config_classic_form = klassisch (Fragmente)
+
+demo_addon_config_title_rex_config = Einstellungen mit rex_config_form
+demo_addon_config_title_classic = Einstellungen klassisch (Fragmente)
+
 demo_addon_config_legend1 = Einfache Felder
 demo_addon_config_url = URL
+demo_addon_config_text = Text
 demo_addon_config_checkbox = Checkbox
 demo_addon_config_select = Select
 demo_addon_config_multiselect = Multiselect
+demo_addon_config_multiselect_note = Mehrfachauswahl mit <kbd>STRG</kbd> bzw. <kbd>CMD</kbd>
+demo_addon_config_radio_fe = Frontend
+demo_addon_config_radio_be = Backend
 
 demo_addon_config_legend2 = Medienpool, Linkmap usw.
 demo_addon_config_file = Datei
+demo_addon_config_files = Datei-Liste
 demo_addon_config_article = Artikel
+demo_addon_config_articles = Artikel-Liste
 demo_addon_config_categories = Kategorienauswahl
 demo_addon_config_pageids = Seitenauswahl
 
 demo_addon_config_save = Einstellungen speichern
 demo_addon_config_saved = Einstellungen wurden gespeichert!
 
-# Benennung für die Addonrechte, sichtbar innerhalb der REDAXO-Administration unter Benutzer > Rollen > Allgemein
 
-perm_general_demo_addon[] = demo_addon[] - Rechte für Demo-Addon
-perm_general_demo_addon[config] = demo_addon[config] - Rechte für Demo-Addon-Konfiguration
+# Benennung für die Addonrechte, sichtbar innerhalb der REDAXO-Administration unter Benutzer > Rollen > Allgemein
+perm_general_demo_addon[] = Rechte für Demo-Addon
+perm_general_demo_addon[config] = Rechte für Demo-Addon-Konfiguration

@@ -1,32 +1,67 @@
 # Alle hier gesetzten Werte können über `$addon->getProperty($key)` abgefragt werden
 
 package: demo_addon # Pflichtfeld
-version: '1.0.0' # Pflichtfeld
-author: Friends Of REDAXO
-supportpage: https://github.com/FriendsOfREDAXO/demo_addon
+version: '1.2.0beta1' # Pflichtfeld
+author: Friends Of REDAXO # Pflichtfeld für FOR-Addons
+supportpage: https://github.com/FriendsOfREDAXO/demo_addon # Github-Adresse des Addons
 
-# Seiten
+# Werte die mit `translate:` beginnen, werden anhand der Sprachdatei (lang/sprache.lang) übersetzt.
+# Der Addon-Präfix (hier `demo_addon_`) kann weggelassen werden.
+
+# Seiten des Addons
 page:
-    title: 'translate:title' # Werte die mit `translate:` beginnen, werden anhand der Sprachdatei übersetzt. Der Addon-Präfix (hier `demo_addon_`) kann weggelassen werden.
+    title: 'translate:navititle' # Bezeichnung in der REDAXO Navigation
+    icon: rex-icon fa-desktop # Icon von Font Awesome
     perm: admin # Seite ist nur für Admins erreichbar
+
+    # Eigener Block in der REDAXO-Navigation
+    # Bezeichnung in der .lang-Datei mit `navigation_+addon-Id` also hier `navigation_demo_addon`
+    block: demo_addon
+
     # Unterseiten
     subpages:
         main:
             title: 'translate:main'
+            icon: rex-icon fa-desktop # Icon von Font Awesome
             perm: demo_addon[] # Das AddOn stellt ein Benutzerrecht bereit, das aktiviert sein muss, um diese Unterseite zu erreichen. Admins haben alle Rechte.
+            subpages: # Weitere Subpages der Hauptseite
+                readme: { title: 'README', subPath: 'README.md'} # README.md aus Addon-Pfad einbinden
+                description: { title: 'translate:description', subPath: 'pages/DESCRIPTION.md'}
+                changelog: {title: 'CHANGELOG', subPath: 'CHANGELOG.md'} # Abweichender Titel zur .md-Datei
+                hidden: { title: 'translate:hidden_subpage', subPath: 'pages/DESCRIPTION.md', hidden: true} # Versteckte Subpage, nur als Beispiel
         config:
             title: 'translate:config'
-            perm: demo_addon[config] # Das noch spezifischer AddOn-Benutzerrecht 'config' ist für diese Unterseite erforderlich. Admins haben alle Rechte.
+            perm: demo_addon[config] # Das noch spezifischere AddOn-Benutzerrecht 'config' ist für diese Unterseite erforderlich. Admins haben alle Rechte.
             icon: rex-icon fa-wrench # Icon von Font Awesome
+            subpages: # Weitere Subpages der Seite config
+                rex_config_form:
+                    title: 'translate:config_rex_config_form'
+                classic_form:
+                    title: 'translate:config_classic_form'
+        tables:
+            title: 'translate:tables'
+            icon: rex-icon fa-table
+            subpages: # Weitere Subpages der Seite tables
+                tables: { title: 'translate:tables', subPath: 'pages/TABLES.md'}
+        eps:
+            title: 'translate:eps'
+            icon: rex-icon fa-rocket
+            subpages: # Weitere Subpages der Seite tables
+                eps: { title: 'translate:eps', subPath: 'pages/EXTENSIONPOINTS.md'}
+        hidden:
+            title: 'translate:hidden_page'
+            icon: rex-icon fa-ban
+            subPath: 'pages/DESCRIPTION.md'
+            hidden: true # Versteckte Page, nur als Beispiel
 
 # Abhängigkeiten
-# Anforderungen ans System oder anderere AddOns, um dieses AddOn installieren oder update zu können
+# Anforderungen ans System oder anderere AddOns, um dieses AddOn installieren oder updaten zu können
 requires:
-    redaxo: '^5.5' # benötigt mindestens REDAXO 5.5
+    redaxo: '^5.8' # benötigt mindestens REDAXO 5.8
     packages:
         media_manager: '^2.0.1' # benötigt mindestens das Addon Media Manager 2.0.1
     php:
-        version: '>=5.6' # benötigt mindestens PHP 5.6
+        version: '>=7.0' # benötigt mindestens PHP 7.0
         extensions: [gd, xml] # benötigt die PHP-Extensions GDlib und XML
 
 # Plugins die automatisch installiert werden sollen

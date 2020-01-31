@@ -1,5 +1,21 @@
 # Changelog
 
+## Version 1.2.0beta1 // 31.01.2020
+
+Neu
+
+* Addon-Struktur, Navigation komplett überarbeitet/erweitert
+* Addon-Einstellungen erweitert
+* Addon-Einstellungen mit rex_config_form
+
+Änderungen
+
+* REDAXO-Version auf 5.8 gesetzt
+* PHP-Version auf 7.0 gesetzt
+* README geändert und Sprachversion .de hinzugefügt
+* package.yml erweitert und kommentiert
+* de_de.lang-Datei erweitert/angepasst/dokumentiert
+
 ## Version 1.1.0 // xx.xx.2018
 
 Neu

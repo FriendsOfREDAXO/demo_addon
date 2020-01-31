@@ -1,0 +1,7 @@
+# ignore TODO
+.TODO.txt
+.todo.txt
+
+# ignore TEST
+.TEST.txt
+.test.txt

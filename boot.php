@@ -22,14 +22,16 @@ if (rex::isBackend() && is_object(rex::getUser())) {
 // Assets werden bei der Installation des Addons in den assets-Ordner kopiert und stehen damit
 // öffentlich zur Verfügung. Sie müssen dann allerdings noch eingebunden werden:
 
-// Assets im Backend einbinden
-if (rex::isBackend() && rex::getUser()) {
-
-    // Die style.css überall im Backend einbinden
+// Assets im Backend einbinden, nur beim demo_addon
+if (rex::isBackend() && rex::getUser() && 'demo_addon' == rex_be_controller::getCurrentPagePart(1)) {
+    // Die style.css bei allen Pages und Subpages des Addons im Backend einbinden
     rex_view::addCssFile($this->getAssetsUrl('css/style.css'));
 
     // Die script.js nur auf der Unterseite »config« des Addons einbinden
-    if (rex_be_controller::getCurrentPagePart(2) == 'config') {
+    if ('config' == rex_be_controller::getCurrentPagePart(2)) {
         rex_view::addJsFile($this->getAssetsUrl('js/script.js'));
     }
+
+    // JavaScript-Variable für das Backend setzen (var rex[])
+    rex_view::setJsProperty('demo_addon_js', 'JS-Value demo_addon ...');
 }
