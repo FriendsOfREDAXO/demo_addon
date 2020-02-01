@@ -1,4 +1,4 @@
-# Sample-Addon for REDAXO 5
+# Sample addOn for REDAXO 5
 
 The addon `demo_addon` shows the structure and basic functionality of addons and many examples of REDAXO functions for use in your own addons. The addon or just parts of it can / should be used for the development of your own addons.
 Extensions to the `demo_addon` addon, like PR (pull request) or notes or improvements as an [issue](https://github.com/FriendsOfREDAXO/demo_addon/issues).
