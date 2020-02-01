@@ -5,6 +5,20 @@
 // Diese Datei ist keine Pflichtdatei mehr.
 
 // SQL-Anweisungen können auch weiterhin über die install.sql ausgeführt werden.
+// Empfohlen wird aber die SQL-Anweisungen in der install.php auszuführen
+// Siehe auch https://redaxo.org/doku/master/datenbank-tabellen
+// Hier wird die Tabelle des Demo-Addons erstellt falls noch nicht vorhanden
+rex_sql_table::get(rex::getTable('demo_addon'))
+    ->ensurePrimaryIdColumn()
+    ->ensureColumn(new rex_sql_column('anrede', 'tinyint(1)'))
+    ->ensureColumn(new rex_sql_column('vorname', 'varchar(60)', true))
+    ->ensureColumn(new rex_sql_column('name', 'varchar(60)', true))
+    ->ensureColumn(new rex_sql_column('strasse', 'varchar(60)', true))
+    ->ensureColumn(new rex_sql_column('plz', 'varchar(60)', true))
+    ->ensureColumn(new rex_sql_column('ort', 'varchar(60)', true))
+    ->ensureColumn(new rex_sql_column('birthdate', 'date', true))
+    ->ensureColumn(new rex_sql_column('status', 'tinyint(1)'))
+    ->ensure();
 
 // Abhängigkeiten (PHP-Version, PHP-Extensions, Redaxo-Version, andere Addons/Plugins) sollten in die package.yml eingetragen werden.
 // Sie brauchen hier dann nicht mehr überprüft werden!

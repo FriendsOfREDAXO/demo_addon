@@ -7,6 +7,7 @@ Neu
 * Addon-Struktur, Navigation komplett überarbeitet/erweitert
 * Addon-Einstellungen erweitert
 * Addon-Einstellungen mit rex_config_form
+* Demo-Tabelle in install.php und uninstall.php
 
 Änderungen
 

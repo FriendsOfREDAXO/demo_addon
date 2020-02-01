@@ -8,12 +8,12 @@ Diese JavaScript-Datei wird in der boot.php des Addons demo_addon eingebunden (r
 // http://molily.de/javascript-core/#closures
 (function ($) {
 
-    // Document Ready
+    // rex:ready
     // Führt Code aus, sobald der DOM vollständig geladen wurde
-    // https://api.jquery.com/ready/
-    $(document).ready(function () {
+    // https://redaxo.org/doku/master/addon-assets#rexready
+    $(document).on('rex:ready', function (event, container) {
 
-        console.log('Demo-Addon ... Ausgabe auf der JS-Konsole');
+        console.log('Demo-Addon Konfiguration ... Ausgabe auf der JS-Konsole');
 
     });
 })(jQuery);

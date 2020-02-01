@@ -32,6 +32,6 @@ if (rex::isBackend() && rex::getUser() && 'demo_addon' == rex_be_controller::get
         rex_view::addJsFile($this->getAssetsUrl('js/script.js'));
     }
 
-    // JavaScript-Variable für das Backend setzen (var rex[])
+    // JavaScript-Variable für das Backend im Head-Bereich setzen (var rex[])
     rex_view::setJsProperty('demo_addon_js', 'JS-Value demo_addon ...');
 }
