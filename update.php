@@ -6,13 +6,14 @@
 
 // Hier können zum Beispiel DB-Tabellen angepasst werden
 
-// $this->getVersion() liefert die noch aktuell installierte Version
+// getVersion() liefert die noch aktuell installierte Version
+$addon = rex_addon::get('demo_addon');
 
-if (rex_string::versionCompare($this->getVersion(), '1.1', '<')) {
+if (rex_string::versionCompare($addon->getVersion(), '1.1', '<')) {
     // Änderungen für Nutzer die von Versionen kleiner 1.1 kommen
 }
 
-if (rex_string::versionCompare($this->getVersion(), '1.2', '<')) {
+if (rex_string::versionCompare($addon->getVersion(), '1.2', '<')) {
     // Änderungen für Nutzer die von Versionen kleiner 1.2 kommen
 }
 

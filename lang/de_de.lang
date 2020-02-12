@@ -23,6 +23,9 @@ demo_addon_hidden_page = Versteckte Seite
 
 # Reiter demo_addon
 demo_addon_description = Beschreibung
+demo_addon_readme = README
+demo_addon_changelog = CHANGELOG
+demo_addon_properties = Properties
 demo_addon_hidden_subpage = Versteckte Unterseite
 
 # Reiter Einstellungen
@@ -48,11 +51,37 @@ demo_addon_config_files = Datei-Liste
 demo_addon_config_article = Artikel
 demo_addon_config_articles = Artikel-Liste
 demo_addon_config_categories = Kategorienauswahl
-demo_addon_config_pageids = Seitenauswahl
 
 demo_addon_config_save = Einstellungen speichern
 demo_addon_config_saved = Einstellungen wurden gespeichert!
 
+# Reiter Tabellen
+demo_addon_updatetable = Tabellenverwaltung
+
+demo_addon_thead_title = Demo Tabellenverwaltung mit rex_list/rex_form
+demo_addon_thead_id = ID
+demo_addon_thead_anrede = Anrede
+demo_addon_thead_vorname = Vorname
+demo_addon_thead_name = Name
+demo_addon_thead_strasse = Strasse
+demo_addon_thead_plz = PLZ
+demo_addon_thead_ort = Ort
+demo_addon_thead_birthdate = Geburtsdatum
+demo_addon_thead_status = Status
+demo_addon_thead_func = Funktionen
+demo_addon_list_no_rows = Keine Einträge vorhanden!
+demo_addon_list_mr = Herr
+demo_addon_list_mrs = Frau
+demo_addon_list_active = aktiv
+demo_addon_list_inactive = inaktiv
+demo_addon_list_edit = Datensatz bearbeiten
+demo_addon_list_create_new_entry = Neuen Datensatz anlegen
+demo_addon_confirm_delete = Datensatz löschen?
+demo_addon_delete = Löschen
+demo_addon_list_deleted = Datensatz wurde gelöscht!
+demo_addon_list_activated = Datensatz wurde aktiviert!
+demo_addon_list_deactivated = Datensatz wurde deaktiviert!
+demo_addon_list_error = Beim Datenbank-Update ist ein Fehler aufgetreten!
 
 # Benennung für die Addonrechte, sichtbar innerhalb der REDAXO-Administration unter Benutzer > Rollen > Allgemein
 perm_general_demo_addon[] = Rechte für Demo-Addon

@@ -16,4 +16,5 @@ Diese JavaScript-Datei wird in der boot.php des Addons demo_addon eingebunden (r
         console.log('Demo-Addon Konfiguration ... Ausgabe auf der JS-Konsole');
 
     });
+
 })(jQuery);

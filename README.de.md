@@ -9,7 +9,7 @@ Erweiterungen des Addons `demo_addon` gerne als PR (Pull-Request) oder Hinweise 
 * dokumentierte package.yml
 * dokumentierte .lang-Datei
 * Addon-Einstellungen (rex_config_form, klassisch)
-* Beispiel einer Tabellenverwaltung mit `rex_form` (inkl. Beispieltabelle)
+* Beispiel einer Tabellenverwaltung mit `rex_list` und `rex_form` (inkl. Beispieltabelle)
 * Beispiele für Extension Points
 * `documentation`-Plugin als Basis für eine Hilfe/Dokumentation für REDAXO-AddOns
 
@@ -20,6 +20,7 @@ Erweiterungen des Addons `demo_addon` gerne als PR (Pull-Request) oder Hinweise 
 * [Assets (CSS, JavaScript ...)](https://redaxo.org/doku/master/addon-assets)
 * [Konfigurations-Formulare](https://redaxo.org/doku/master/konfiguration_form)
 * [AddOn Veröffentlichung](https://redaxo.org/doku/master/addon-veroeffentlichung)
+* [Queries - rex_sql](https://www.redaxo.org/doku/master/datenbank-queries)
 
 ## Sonstiges
 

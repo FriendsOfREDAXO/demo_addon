@@ -13,6 +13,7 @@ page:
     title: 'translate:navititle' # Bezeichnung in der REDAXO Navigation
     icon: rex-icon fa-desktop # Icon von Font Awesome
     perm: admin # Seite ist nur für Admins erreichbar
+    pjax: true # Hier kann die Verwendung von PJAX für das eigene Addon gesteuert werden
 
     # Eigener Block in der REDAXO-Navigation
     # Bezeichnung in der .lang-Datei mit `navigation_+addon-Id` also hier `navigation_demo_addon`
@@ -25,9 +26,10 @@ page:
             icon: rex-icon fa-desktop # Icon von Font Awesome
             perm: demo_addon[] # Das AddOn stellt ein Benutzerrecht bereit, das aktiviert sein muss, um diese Unterseite zu erreichen. Admins haben alle Rechte.
             subpages: # Weitere Subpages der Hauptseite
-                readme: { title: 'README', subPath: 'README.md'} # README.md aus Addon-Pfad einbinden
+                readme: { title: 'translate:readme', subPath: 'README.md'} # README.md aus Addon-Pfad einbinden
                 description: { title: 'translate:description', subPath: 'pages/DESCRIPTION.md'}
-                changelog: {title: 'CHANGELOG', subPath: 'CHANGELOG.md'} # Abweichender Titel zur .md-Datei
+                changelog: {title: 'translate:changelog', subPath: 'CHANGELOG.md'} # Abweichender Titel zur .md-Datei
+                properties: {title: 'translate:properties'}
                 hidden: { title: 'translate:hidden_subpage', subPath: 'pages/DESCRIPTION.md', hidden: true} # Versteckte Subpage, nur als Beispiel
         config:
             title: 'translate:config'
@@ -43,6 +45,7 @@ page:
             icon: rex-icon fa-table
             subpages: # Weitere Subpages der Seite tables
                 tables: { title: 'translate:tables', subPath: 'pages/TABLES.md'}
+                updatetable: { title: 'translate:updatetable'}
         eps:
             title: 'translate:eps'
             icon: rex-icon fa-rocket
@@ -61,7 +64,7 @@ requires:
     packages:
         media_manager: '^2.0.1' # benötigt mindestens das Addon Media Manager 2.0.1
     php:
-        version: '>=7.0' # benötigt mindestens PHP 7.0
+        version: '^7.0' # benötigt mindestens PHP 7.0
         extensions: [gd, xml] # benötigt die PHP-Extensions GDlib und XML
 
 # Plugins die automatisch installiert werden sollen

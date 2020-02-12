@@ -8,6 +8,8 @@ Neu
 * Addon-Einstellungen erweitert
 * Addon-Einstellungen mit rex_config_form
 * Demo-Tabelle in install.php und uninstall.php
+* Verwaltung der Demo-Tabelle mit rex_list und rex_form
+* Demo-Seite für die Abfrage von Addon-Properties hinzugefügt
 
 Änderungen
 
@@ -16,6 +18,7 @@ Neu
 * README geändert und Sprachversion .de hinzugefügt
 * package.yml erweitert und kommentiert
 * de_de.lang-Datei erweitert/angepasst/dokumentiert
+* $this->i18n geändert in $addon->i18n
 
 ## Version 1.1.0 // xx.xx.2018
 

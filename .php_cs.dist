@@ -1,5 +1,8 @@
 <?php
 
+// REDAXO-Coding-Standards
+// kann z.B. mit PHPStorm oder mit VSCode mit der Extension 'php cs fixer' verwendet werden
+
 $finder = PhpCsFixer\Finder::create()
     ->in([__DIR__]);
 
