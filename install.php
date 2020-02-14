@@ -21,7 +21,7 @@ rex_sql_table::get(rex::getTable('demo_addon'))
     ->ensureColumn(new rex_sql_column('status', 'tinyint(1)', true, 1))
     ->ensure();
 
-// Bei Addon-Installation/Update folgende Beispiel-Daten importieren
+// Bei Addon-Installation/Reinstallation folgende Beispiel-Daten importieren
 $demodata = [
     ['id' => 1, 'anrede' => 1, 'vorname' => 'Max', 'name' => 'Muster', 'strasse' => 'Schönstr. 1', 'plz' => '81333', 'ort' => 'München', 'birthdate' => '1966-01-01', 'status' => 1],
     ['id' => 2, 'anrede' => 1, 'vorname' => 'Mario', 'name' => 'Neumann', 'strasse' => 'Waldweg 11a', 'plz' => '84405', 'ort' => 'Dorfen', 'birthdate' => '1968-06-06', 'status' => 1],

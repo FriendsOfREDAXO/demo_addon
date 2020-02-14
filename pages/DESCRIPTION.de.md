@@ -43,7 +43,7 @@ Alles ist natürlich auch in der [REDAXO-Dokumentation](https://redaxo.org/doku/
 
  [Extension Points](https://redaxo.org/doku/master/extension-points) sind Stellen im REDAXO-Programmcode, an denen eigener Code eingeklinkt und ausgeführt werden kann. Dadurch lässt sich auch das Core-System erweitern und anpassen, ohne den Core selbst zu verändern.
 
-Im Verzeichnis pages/extensionpoints/ gibt es für viele Extension Points Beispiele und wie diese EP's verwendet werden können.
+Im Verzeichnis pages/extensionpoints/ gibt es viele Beispiele für Extension Points und wie diese EP's verwendet werden können.
 
 * [Zu den Extension-Points](?page=demo_addon/eps/eps)
 
@@ -54,6 +54,7 @@ TODO
 . zusätzlichen Menüpunkt einbinden wenn Addon xy installiert ist
 . Beschreibung und Anwendung Permission-Check rex::getUser()->hasPerm('meinaddon[delete]')
 . Tabellenverwaltung aktivieren/deaktivieren per Ajax
+. Hinweise bzw. Verbesserungen gerne als [Issue](https://github.com/FriendsOfREDAXO/demo_addon/issues) auf github.
 
 ## Credits
 

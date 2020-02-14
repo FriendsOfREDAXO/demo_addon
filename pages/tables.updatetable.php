@@ -3,10 +3,16 @@
 $addon = rex_addon::get('demo_addon');
 
 // Custom-Function zum prüfen des Geburtsdatums
-// Return false wenn das Datum ungültig ist. Ansonsten true
-function demoAddon_checkBirthdate($par)
+// Diese function kann auch in der boot.php des Addons notiert werden
+// Return `false` wenn das Datum ungültig ist, `true` wenn das Datum gültig ist
+function demoAddon_checkBirthdate($date)
 {
-    return '0000-00-00';
+    $rc = false;
+
+    $d = DateTime::createFromFormat('d.m.Y', $date);
+    $rc = $d && $d->format('d.m.Y') == $date;
+
+    return $rc;
 }
 
 // Die Update-Funktionen werden am Anfang des Scripts abgearbeitet
@@ -17,11 +23,24 @@ $func = rex_request('func', 'string', ''); // Funktion: add/edit/delete
 $id = rex_request('id', 'int', -1); // ID des Datensatzes
 $oldstatus = rex_request('oldstatus', 'int', -1); // Alter Status beim aktivieren/deaktivieren
 
+// Start der Liste
+// Parameter ist entweder `start=x` oder `$listName_start=x`
+// $listName entspricht dabei dem Parameter `$listName` bei rex_list::factory
+// Hier also `Demo-Liste_start`
+// Die Variable `$start` wird weiter unten im Code als Linkparameter verwendet
+// damit nach Update/Löschen/Abbruch aus dem Edit-Formular wieder an die richtige Position der Liste
+// gesprungen wird (Pagination)
+$start = rex_request('start', 'int', -1); // Start der Liste, Parameter $listName bei rex_list::factory
+if (-1 == $start) {
+    $start = rex_request('Demo-Liste_start', 'int', 0);
+}
+rex_addon::get('demo_addon')->setProperty('list_start', $start);
+
 // Bei vorhandener Funktion (add/edit/delete) eine rex_sql-Instanz erstellen
 // https://www.redaxo.org/doku/master/datenbank-queries
  if ($func) {
      $sql = rex_sql::factory();
-     $sql->setDebug(true); // mit 'true' kann die Debug-Ausgabe eingeschalten werden
+     $sql->setDebug(false); // mit `true` kann die Debug-Ausgabe eingeschalten werden
  }
 
 // -----------------------------------------------------------------------------
@@ -70,15 +89,11 @@ if ('togglestatus' == $func) {
 // https://redaxo.org/doku/master/formulare
 // -----------------------------------------------------------------------------
 if (in_array($func, ['add', 'edit'])) {
-    if ('edit' == $func) {
-        $title = $addon->i18n('list_edit');
-    }
-    if ('add' == $func) {
-        $title = $addon->i18n('list_create_new_entry');
-    }
+    $title = 'edit' == $func ? $addon->i18n('list_edit') : $addon->i18n('list_create_new_entry');
 
     // Formular-Objekt erstellen
-    $form = rex_form::factory(rex::getTable('demo_addon'), 'Datensatz bearbeiten', 'id=' . $id);
+    // $form = rex_form::factory( string $tableName, string $fieldset, string $whereCondition, string $method = 'post', boolean $debug = false )
+    $form = demo_addon_rex_form::factory(rex::getTable('demo_addon'), 'Datensatz bearbeiten', 'id=' . $id, 'post', false);
 
     // Die ID muss immer mit übergeben werden, sonst funktioniert das Speichern nicht
     $form->addParam('id', $id); // ID des Datensatzes
@@ -120,10 +135,13 @@ if (in_array($func, ['add', 'edit'])) {
     $field->setLabel($addon->i18n('thead_birthdate'));
     $field->setAttribute('style', 'width: 150px;');
     $field->setAttribute('maxlength', '10');
+    // MySQL-Datum in deutsches Datum umformatieren
+    // gespeichert wird im Format YYYY-MM-DD, angezeigt im Format tt.mm.jjjj
     if ($field->getValue()) {
         $field->setValue(date('d.m.Y', strtotime($field->getValue())));
     }
     $field->getValidator()->add('notEmpty', 'Das Feld Geburtsdatum darf nicht leer sein.');
+    // Custom-Function `demoAddon_checkBirthdate` für die Prüfung des Geburtsdatums
     $field->getValidator()->add('custom', 'Geburtsdatum ungültig', 'demoAddon_checkBirthdate');
 
     // Select Status
@@ -161,7 +179,7 @@ $list = rex_list::factory(
     FROM ' . rex::getTable('demo_addon') . '
     ORDER by `name` ASC, `vorname` ASC
     ',
-    30, 'Demo-Liste', false);
+    3, 'Demo-Liste', false);
 
 // Spalten können mit removeColumn('columnname') entfernt werden
 //$list->removeColumn('id');
@@ -182,7 +200,7 @@ $list->setColumnSortable('name', 'asc');
 $thIcon = '<a href="' . $list->getUrl(['func' => 'add']) . '"' . rex::getAccesskey($addon->i18n('list_create_new_entry'), 'add') . ' title="' . $addon->i18n('create_new_entry') . '"><i class="rex-icon rex-icon-add"></i></a>';
 $tdIcon = '<i class="rex-icon rex-icon-editmode" title="' . $addon->i18n('list_edit') . ' [###id###]"></i>';
 $list->addColumn($thIcon, $tdIcon, 0, ['<th class="rex-table-icon">###VALUE###</th>', '<td class="rex-table-icon">###VALUE###</td>']);
-$list->setColumnParams($thIcon, ['func' => 'edit', 'id' => '###id###']);
+$list->setColumnParams($thIcon, ['func' => 'edit', 'id' => '###id###', 'start' => $start]);
 
 // Spalte 'Funktionen' am Zeilen-Ende hinzufügen (Parameter 3 bei addColumn = -1)
 // Link zum löschen des Datensatzes
@@ -193,9 +211,10 @@ $list->setColumnLabel('func', $addon->i18n('thead_func'));
 // setColumnParams func => 'delete' ... wird weiter oben im Script entsprechend abgefragt und abgearbeitet
 // Die Klasse 'data-confirm' bei addLinkAttribute bewirkt eine Popup-Abfrage ob der Datensatz gelöscht werden soll
 // ohne die Klasse 'data-confirm' wird der Datensatz sofort gelöscht!
-$list->setColumnFormat('func', 'custom', static function ($params) {
+$list->setColumnFormat('func', 'custom', static function ($params) use ($addon) {
+    $start = $addon->getProperty('list_start');
     $list = $params['list'];
-    $list->setColumnParams('delete', ['func' => 'delete', 'id' => '###id###']);
+    $list->setColumnParams('delete', ['func' => 'delete', 'id' => '###id###', 'start' => $start]);
     $list->addLinkAttribute('delete', 'data-confirm', '[###vorname### ###name###] - ' . rex_addon::get('demo_addon')->i18n('confirm_delete'));
     $str = $list->getColumnLink('delete', '<i class="rex-icon rex-icon-delete"></i> ' . rex_addon::get('demo_addon')->i18n('delete') . '');
     return $str;
@@ -224,7 +243,7 @@ $list->setColumnFormat('anrede', 'custom', static function ($params) {
 
 // Spalte Geburtsdatum (birthdate) anpassen
 // In der Tabelle wird das Datum im Format YYYY-MM-DD gespeichert
-// Hier wird für die Anzeige auf das deutsche Datumsformat umgewandelt
+// Hier wird für die Anzeige auf das deutsche Datumsformat tt.mm.jjjj umgewandelt
 $list->setColumnFormat('birthdate', 'custom', static function ($params) {
     $list = $params['list'];
     $str = date('d.m.Y', strtotime($list->getValue('birthdate')));
@@ -236,14 +255,15 @@ $list->setColumnFormat('birthdate', 'custom', static function ($params) {
 // Hier wird die Ausgabe als Text umgewandelt und als Link ausgegeben
 // Dem Link wird die func=togglestatus und der 'alte' (oldstatus) Status angehängt
 // func => 'togglestatus' ... wird weiter oben im Script entsprechend abgefragt und abgearbeitet
-$list->setColumnFormat('status', 'custom', static function ($params) {
+$list->setColumnFormat('status', 'custom', static function ($params) use ($addon) {
+    $start = $addon->getProperty('list_start');
     $list = $params['list'];
     $list->addLinkAttribute('status', 'class', 'toggle');
     if (1 == $list->getValue('status')) {
-        $list->setColumnParams('status', ['func' => 'togglestatus', 'id' => '###id###', 'oldstatus' => '###status###']);
+        $list->setColumnParams('status', ['func' => 'togglestatus', 'id' => '###id###', 'oldstatus' => '###status###', 'start' => $start]);
         $str = $list->getColumnLink('status', '<span class="rex-online"><i class="rex-icon rex-icon-active-true"></i> ' . rex_i18n::msg('demo_addon_list_active') . '</span>');
     } else {
-        $list->setColumnParams('status', ['func' => 'togglestatus', 'id' => '###id###', 'oldstatus' => '###status###']);
+        $list->setColumnParams('status', ['func' => 'togglestatus', 'id' => '###id###', 'oldstatus' => '###status###', 'start' => $start]);
         $str = $list->getColumnLink('status', '<span class="rex-offline"><i class="rex-icon rex-icon-active-false"></i> ' . rex_i18n::msg('demo_addon_list_inactive') . '</span>');
     }
     return $str;

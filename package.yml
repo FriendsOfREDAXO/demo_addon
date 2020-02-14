@@ -33,7 +33,7 @@ page:
                 hidden: { title: 'translate:hidden_subpage', subPath: 'pages/DESCRIPTION.md', hidden: true} # Versteckte Subpage, nur als Beispiel
         config:
             title: 'translate:config'
-            perm: demo_addon[config] # Das noch spezifischere AddOn-Benutzerrecht 'config' ist für diese Unterseite erforderlich. Admins haben alle Rechte.
+            perm: demo_addon[config] # Das noch spezifischere AddOn-Benutzerrecht `config` ist für diese Unterseite erforderlich. Admins haben alle Rechte.
             icon: rex-icon fa-wrench # Icon von Font Awesome
             subpages: # Weitere Subpages der Seite config
                 rex_config_form:

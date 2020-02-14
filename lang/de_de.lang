@@ -10,8 +10,8 @@ demo_addon_navititle = Demo-Addon
 demo_addon_title = REDAXO Demo-Addon
 
 # Eigener Block mit Bezeichnung in der REDAXO-Navigation
+# in der package.yml des Addons folgendes unter page angeben: `block: demo_addon`
 # `navigation_` + addon-Name hier also `navigation_demo_addon`
-# in der package.yml dess Addons folgendes unter page angeben: `block: demo_addon`
 navigation_demo_addon = DEMO-Addon
 
 # Hauptnavi-Punkte des Addons

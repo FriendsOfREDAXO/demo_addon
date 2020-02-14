@@ -5,6 +5,7 @@ Bei der Installation des `demo_addon` wird automatisch die Tabelle `%%demo_addon
 **%%** steht hier für den REDAXO Table Prefix für Datenbanktabellen und ist standardmäßig auf `rex_` eingestellt (table_prefix in der default.config.yml).
 
 Die Tabellenverwaltung wurde mit den REDAXO-Klassen `rex_list` und `rex_form` umgesetzt.
+Die Klasse `rex_form` wird in dem Beispiel durch die Klasse `demo_addon_rex_form` erweitert (`demo_addon_rex_form.php` im lib-Verzeichnis des Addons). Hier wird die Funktion `preSave()` zum speichern des Feldes Geburtsdatum (`birthdate`) im richtigen Format verwendet.
 
 * [zur Tabellenverwaltung](?page=demo_addon/tables/updatetable)
 
