@@ -14,7 +14,7 @@ Neu
 Änderungen
 
 * REDAXO-Version auf min. 5.8 gesetzt
-* PHP-Version auf 7.0 gesetzt
+* PHP-Version auf min. 7.0 gesetzt
 * README geändert und Sprachversion .de hinzugefügt
 * package.yml erweitert und kommentiert
 * de_de.lang-Datei erweitert/angepasst/dokumentiert
