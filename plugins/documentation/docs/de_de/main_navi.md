@@ -24,8 +24,8 @@
 
 <p style="text-align:center;">
 
-![demo_yorm @FriendsOfREDAXO](assets/for_small.png)
+![demo_addon @FriendsOfREDAXO](assets/for_small.png)
 
 </p>
 
-[demo_yorm @FriendsOfREDAXO](https://github.com/FriendsOfREDAXO/demo_yorm)
+[demo_addon @FriendsOfREDAXO](https://github.com/FriendsOfREDAXO/demo_addon)

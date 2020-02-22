@@ -8,7 +8,7 @@
     // https://api.jquery.com/ready/
     $(document).ready(function () {
 
-        console.log('Demo-Yorm');
+        console.log('Demo-Addon');
 
     });
 })(jQuery);
