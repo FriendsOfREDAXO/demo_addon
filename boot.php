@@ -2,21 +2,15 @@
 
 /** @var rex_addon $this */
 
-// Diese Datei ist keine Pflichdatei mehr.
-
-// Daten wie Autor, Version, Subpages etc. sollten wenn möglich in der package.yml notiert werden.
-// Sie können aber auch weiterhin hier gesetzt werden:
-$this->setProperty('author', 'Friends Of REDAXO');
-
-// Die Datei sollte keine veränderbare Konfigurationen mehr enthalten, um die Updatefähigkeit zu erhalten.
-// Stattdessen sollte dafür die rex_config verwendet werden (siehe install.php)
-
-// Klassen und lang-Dateien müssen hier nicht mehr eingebunden werden, sie werden nun automatisch gefunden.
+// Yorm ORM Klasse registrieren
+rex_yform_manager_dataset::setModelClass(rex::getTable('product'), Product::class);
+rex_yform_manager_dataset::setModelClass(rex::getTable('product_category'), ProductCategory::class);
+rex_yform_manager_dataset::setModelClass(rex::getTable('product_rating'), ProductRating::class);
 
 // Addonrechte (permissions) registieren
 if (rex::isBackend() && is_object(rex::getUser())) {
-    rex_perm::register('demo_addon[]');
-    rex_perm::register('demo_addon[config]');
+    rex_perm::register('demo_yorm[]');
+    rex_perm::register('demo_yorm[config]');
 }
 
 // Assets werden bei der Installation des Addons in den assets-Ordner kopiert und stehen damit
@@ -29,7 +23,7 @@ if (rex::isBackend() && rex::getUser()) {
     rex_view::addCssFile($this->getAssetsUrl('css/style.css'));
 
     // Die script.js nur auf der Unterseite »config« des Addons einbinden
-    if (rex_be_controller::getCurrentPagePart(2) == 'config') {
+    if (rex_be_controller::getCurrentPagePart(2) == 'main') {
         rex_view::addJsFile($this->getAssetsUrl('js/script.js'));
     }
 }

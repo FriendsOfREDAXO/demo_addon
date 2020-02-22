@@ -10,10 +10,10 @@
 
 Beispiel:
 
-    package: demo_addon/documentation
+    package: demo_yorm/documentation
     version: '1.0.0'
     author: 'Friends Of REDAXO'
-    supportpage: github.com/FriendsOfREDAXO/demo_addon
+    supportpage: github.com/FriendsOfREDAXO/demo_yorm
 
     documentationlang: 'de_de'
     defaultnavi: 'main_navi.md'
@@ -29,7 +29,7 @@ Beispiel:
 
 Eintrag|Beschreibung
 ------ | ------
-package|`demo_addon/documentation` muss angepasst werden in `DeinAddonName/documentation` da sonst die Installation des Plugins in der Addon-Verwaltung nicht funktioniert.
+package|`demo_yorm/documentation` muss angepasst werden in `DeinAddonName/documentation` da sonst die Installation des Plugins in der Addon-Verwaltung nicht funktioniert.
 version|Versionsnummer deiner Dokumentation
 author|Angaben über den Autor
 supportpage|Supportpage für dein Addon

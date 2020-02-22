@@ -1,48 +1,39 @@
 # Alle hier gesetzten Werte können über `$addon->getProperty($key)` abgefragt werden
 
-package: demo_addon # Pflichtfeld
+package: demo_yorm # Pflichtfeld
 version: '1.0.0' # Pflichtfeld
 author: Friends Of REDAXO
-supportpage: https://github.com/FriendsOfREDAXO/demo_addon
+supportpage: https://github.com/FriendsOfREDAXO/demo_yorm
 
 # Seiten
 page:
-    title: 'translate:title' # Werte die mit `translate:` beginnen, werden anhand der Sprachdatei übersetzt. Der Addon-Präfix (hier `demo_addon_`) kann weggelassen werden.
-    perm: admin # Seite ist nur für Admins erreichbar
+    title: 'translate:title' # Werte die mit `translate:` beginnen, werden anhand der Sprachdatei übersetzt. Der Addon-Präfix (hier `demo_yorm_`) kann weggelassen werden.
+    icon: rex-icon fa-shopping-cart
+    href: {page: demo_yorm/Product, table_name: rex_product}
+
     # Unterseiten
     subpages:
-        main:
-            title: 'translate:main'
-            perm: demo_addon[] # Das AddOn stellt ein Benutzerrecht bereit, das aktiviert sein muss, um diese Unterseite zu erreichen. Admins haben alle Rechte.
-        config:
-            title: 'translate:config'
-            perm: demo_addon[config] # Das noch spezifischer AddOn-Benutzerrecht 'config' ist für diese Unterseite erforderlich. Admins haben alle Rechte.
-            icon: rex-icon fa-wrench # Icon von Font Awesome
 
+        Product:
+            title: 'translate:page_product'
+            icon: rex-icon fa-info-circle
+            perm: demo_yorm[Product]
+            subPath: ../yform/plugins/manager/pages/data_edit.php
+            href: {page: demo_yorm/Product, table_name: rex_product}
+
+        ProductCategory:
+            title: 'translate:page_product_category'
+            icon: rex-icon fa-database
+            perm: demo_yorm[ProductCategory]
+            subPath: ../yform/plugins/manager/pages/data_edit.php
+            href: {page: demo_yorm/ProductCategory, table_name: rex_product_category}
+            
 # Abhängigkeiten
 # Anforderungen ans System oder anderere AddOns, um dieses AddOn installieren oder update zu können
 requires:
-    redaxo: '^5.5' # benötigt mindestens REDAXO 5.5
     packages:
-        media_manager: '^2.0.1' # benötigt mindestens das Addon Media Manager 2.0.1
-    php:
-        version: '>=5.6' # benötigt mindestens PHP 5.6
-        extensions: [gd, xml] # benötigt die PHP-Extensions GDlib und XML
-
+        yform: '>=2.0.0' # benötigt mindestens das Addon Media Manager 2.0.1
+    
 # Plugins die automatisch installiert werden sollen
 system_plugins:
     - documentation
-
-# Konflikte
-# Verhindert die Installation und Updates, wenn AddOns die genannten Anforderungen erfüllen
-# Siehe auch https://github.com/FriendsOfREDAXO/cache_warmup/pull/55#issuecomment-280906737
-conflicts:
-    packages:
-        media_manager: '>=3' # Ist Media Manager in Version 3 vorhanden, führt das zum Konflikt mit diesem AddOn
-
-# Installer (ab REX 5.7)
-# Angabe von Ordnern und Dateien, die vom Installer ausgelassen werden sollen, wenn ein Release veröffentlicht wird
-# Siehe auch https://github.com/redaxo/redaxo/pull/2352
-installer_ignore:
-    - node_modules
-    - .env

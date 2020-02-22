@@ -1,13 +1,9 @@
-# Beispiel-Addon für REDAXO 5
+# Beispiel-Addon für die Verwendung von Yorm ORM in REDAXO 5
 
-Zeigt den Aufbau und Basisfunktionalität von Addons.
+Zeigt den Aufbau und die Funktionalität von Yorm ORM.
 
 * `documentation`-Plugin als Basis für eine Hilfe/Dokumentation für REDAXO5-AddOns
-* Hauptseite des Addons - Beschreibungen der Beispiele in einzelnen Blöcken und Hinweise auf den PHP-Code <sup><b>(todo)</b></sup>
-* Quellcode dokumentieren <sup><b>(todo)</b></sup>
-* Addon-Einstellungen in Tabelle `rex_config` speichern
-* Beispiel einer Tabellenverwaltung mit `rex_form` (inkl. Beispieltabelle) <sup><b>(todo)</b></sup>
-* Beispiel Extension Point(s) <sup><b>(todo)</b></sup>
+* Hauptseite des Addons - Einbinden einer YForm Tabelle in ein eigenes Addon
 * ...
 
 ## AddOn-Entwicklung in der REDAXO-Dokumentation

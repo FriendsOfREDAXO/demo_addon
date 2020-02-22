@@ -1,7 +1,7 @@
-package: demo_addon/documentation
+package: demo_yorm/documentation
 version: '1.0.0'
 author: 'Friends Of REDAXO'
-supportpage: https://github.com/FriendsOfREDAXO/demo_addon
+supportpage: https://github.com/FriendsOfREDAXO/demo_yorm
 
 documentationlang: 'de_de'
 defaultnavi: 'main_navi.md'
@@ -10,4 +10,5 @@ defaultintro: 'main_intro.md'
 page:
     title: 'translate:documentation_menu_entry'
     icon: rex-icon fa-book
-    perm: admin[]
+    itemclass: pull-right
+            

@@ -2,9 +2,9 @@
 
 ---
 
-1. Download des [demo-Addons](https://github.com/FriendsOfREDAXO/demo_addon) von Github. Das Addon findest Du [hier](https://github.com/FriendsOfREDAXO/demo_addon) oder im Installer
+1. Download des [Demo-Yorms](https://github.com/FriendsOfREDAXO/demo_yorm) von Github. Das Addon findest Du [hier](https://github.com/FriendsOfREDAXO/demo_yorm) oder im Installer
 2. Im eigenen Addon das Verzeichnis **plugins** anlegen (falls noch nicht vorhanden)
-3. Das plugin `documentation` vom `demo_addon` in das Verzeichnis **plugins** des eigenen Addons kopieren
+3. Das plugin `documentation` vom `demo_yorm` in das Verzeichnis **plugins** des eigenen Addons kopieren
 4. Anpassen der `package.yml`, siehe [Anpassungen](howto_customize.md)
 5. die eigene Dokumentation schreiben, alle Dateien z.B. im Verzeichnis `/docs/de_de/` - ja richtig gelesen ... *DOKUMENTIEREN* ;-)
 6. Plugin `documentation` deines Addons installieren

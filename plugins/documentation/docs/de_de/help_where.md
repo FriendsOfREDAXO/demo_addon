@@ -1,6 +1,6 @@
 # Wo finde ich weitere Hilfe?
 
-Die aktuelle Version vom Plugin `documentation` wird auf [GitHub](https://github.com/FriendsOfREDAXO/demo_addon) von @aeberhard @FriendsOfREDAXO gepflegt.
+Die aktuelle Version vom Plugin `documentation` wird auf [GitHub](https://github.com/FriendsOfREDAXO/demo_yorm) von @aeberhard @FriendsOfREDAXO gepflegt.
 Dort können Fragen gestellt, Bugs oder Anregungen gemeldet werden (Issues).
 
 Fragen können auch im [REDAXO-Forum](http://www.redaxo.org/de/forum/) oder im [REDAXO-Channel auf Slack](https://friendsofredaxo.slack.com/) gestellt werden.
@@ -10,7 +10,7 @@ Fragen können auch im [REDAXO-Forum](http://www.redaxo.org/de/forum/) oder im [
 >
 > **Hinweis:**
 > Plugin `documentation` auf Github
-> [github.com/FriendsOfREDAXO/demo_addon](https://github.com/FriendsOfREDAXO/demo_addon)
+> [github.com/FriendsOfREDAXO/demo_yorm](https://github.com/FriendsOfREDAXO/demo_yorm)
 
 ---
 
