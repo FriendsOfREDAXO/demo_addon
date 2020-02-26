@@ -10,11 +10,12 @@ Neu
 * Demo-Tabelle in install.php und uninstall.php
 * Verwaltung der Demo-Tabelle mit rex_list und rex_form
 * Demo-Seite für die Abfrage von Addon-Properties hinzugefügt
+* Quelltexte usw. kommentiert und verlinkt auf die REDAXO-Dokumentation
 
 Änderungen
 
 * REDAXO-Version auf min. 5.8 gesetzt
-* PHP-Version auf min. 7.0 gesetzt
+* PHP-Version auf min. 7.3 gesetzt
 * README geändert und Sprachversion .de hinzugefügt
 * package.yml erweitert und kommentiert
 * de_de.lang-Datei erweitert/angepasst/dokumentiert

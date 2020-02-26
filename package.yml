@@ -1,3 +1,4 @@
+# Dokumentation der package.yml https://redaxo.org/doku/master/addon-package
 # Alle hier gesetzten Werte können über `$addon->getProperty($key)` abgefragt werden
 
 package: demo_addon # Pflichtfeld
@@ -14,6 +15,8 @@ page:
     icon: rex-icon fa-desktop # Icon von Font Awesome
     perm: admin # Seite ist nur für Admins erreichbar
     pjax: true # Hier kann die Verwendung von PJAX für das eigene Addon gesteuert werden
+    # mit der Einstellung `prio` kann die Position im Hauptmenü beeinflusst werden
+    # prio: 10
 
     # Eigener Block in der REDAXO-Navigation
     # Bezeichnung in der .lang-Datei mit `navigation_+addon-Id` also hier `navigation_demo_addon`
@@ -26,11 +29,11 @@ page:
             icon: rex-icon fa-desktop # Icon von Font Awesome
             perm: demo_addon[] # Das AddOn stellt ein Benutzerrecht bereit, das aktiviert sein muss, um diese Unterseite zu erreichen. Admins haben alle Rechte.
             subpages: # Weitere Subpages der Hauptseite
-                readme: { title: 'translate:readme', subPath: 'README.md'} # README.md aus Addon-Pfad einbinden
-                description: { title: 'translate:description', subPath: 'pages/DESCRIPTION.md'}
-                changelog: {title: 'translate:changelog', subPath: 'CHANGELOG.md'} # Abweichender Titel zur .md-Datei
-                properties: {title: 'translate:properties'}
-                hidden: { title: 'translate:hidden_subpage', subPath: 'pages/DESCRIPTION.md', hidden: true} # Versteckte Subpage, nur als Beispiel
+                readme: { title: 'translate:readme', subPath: 'README.md' } # README.md aus Addon-Pfad einbinden
+                description: { title: 'translate:description', subPath: 'pages/DESCRIPTION.md' }
+                changelog: {title: 'translate:changelog', subPath: 'CHANGELOG.md' } # Abweichender Titel zur .md-Datei
+                properties: { title: 'translate:properties' }
+                hidden: { title: 'translate:hidden_subpage', subPath: 'pages/DESCRIPTION.md', hidden: true } # Versteckte Subpage, nur als Beispiel
         config:
             title: 'translate:config'
             perm: demo_addon[config] # Das noch spezifischere AddOn-Benutzerrecht `config` ist für diese Unterseite erforderlich. Admins haben alle Rechte.
@@ -44,13 +47,14 @@ page:
             title: 'translate:tables'
             icon: rex-icon fa-table
             subpages: # Weitere Subpages der Seite tables
-                tables: { title: 'translate:tables', subPath: 'pages/TABLES.md'}
-                updatetable: { title: 'translate:updatetable'}
+                tables: { title: 'translate:tables', subPath: 'pages/TABLES.md' }
+                updatetable: { title: 'translate:updatetable' }
         eps:
             title: 'translate:eps'
             icon: rex-icon fa-rocket
-            subpages: # Weitere Subpages der Seite tables
-                eps: { title: 'translate:eps', subPath: 'pages/EXTENSIONPOINTS.md'}
+            subpages: # Weitere Subpages der Seite eps
+                eps: { title: 'translate:eps', subPath: 'pages/EXTENSIONPOINTS.md' }
+                eplist: { title: 'translate:eplist' }
         hidden:
             title: 'translate:hidden_page'
             icon: rex-icon fa-ban
@@ -64,7 +68,7 @@ requires:
     packages:
         media_manager: '^2.0.1' # benötigt mindestens das Addon Media Manager 2.0.1
     php:
-        version: '^7.0' # benötigt mindestens PHP 7.0
+        version: '^7.3' # benötigt mindestens PHP 7.3
         extensions: [gd, xml] # benötigt die PHP-Extensions GDlib und XML
 
 # Plugins die automatisch installiert werden sollen

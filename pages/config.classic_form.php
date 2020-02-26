@@ -198,7 +198,14 @@ $category_select->setId('demo_addon-config-categories');
 $category_select->setSize('10');
 $category_select->setMultiple(true);
 $category_select->setAttribute('style', 'width:100%');
-$category_select->setSelected($this->getConfig('categories'));
+$mselect = $this->getConfig('categories');
+
+/* FIX für Multiselect da rex_config_form in Pipe-Schreibweise speichert, wird nur hier in der Demo benötigt */
+if (!is_array($mselect)) {
+    $mselect = explode('|', $mselect);
+} /* Ende FIX */
+
+$category_select->setSelected($mselect);
 $n['field'] = $category_select->get();
 $formElements[] = $n;
 

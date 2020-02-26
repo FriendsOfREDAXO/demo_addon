@@ -1,6 +1,7 @@
 <?php
 
 // REDAXO-Coding-Standards
+// https://github.com/redaxo/redaxo/blob/master/.php_cs.dist
 // kann z.B. mit PHPStorm oder mit VSCode mit der Extension `php cs fixer` verwendet werden
 
 $finder = PhpCsFixer\Finder::create()
@@ -51,6 +52,7 @@ return PhpCsFixer\Config::create()
         'phpdoc_order' => true,
         'phpdoc_types_order' => false,
         'phpdoc_var_annotation_correct_order' => true,
+        'phpdoc_var_without_name' => false,
         'psr4' => false,
         'semicolon_after_instruction' => false,
         'static_lambda' => true,
@@ -58,4 +60,5 @@ return PhpCsFixer\Config::create()
         'void_return' => false,
         'yoda_style' => true,
     ])
-    ->setFinder($finder);
+    ->setFinder($finder)
+;

@@ -16,14 +16,14 @@ $addon = rex_addon::get('demo_addon');
 $form = rex_config_form::factory('demo_addon');
 
 // Fieldset 1
-$form->addFieldset($addon->i18n('config_legend1'));
+$field = $form->addFieldset($addon->i18n('config_legend1'));
 
 // 1.1 Einfaches Textfeld
 $field = $form->addInputField('text', 'url', null, ['class' => 'form-control']);
 $field->setLabel($addon->i18n('config_url'));
 
 // 1.2 Textarea
-$field = $form->addTextAreaField('text');
+$field = $form->addTextAreaField('text', null, ['class' => 'form-control']);
 $field->setLabel($addon->i18n('config_text'));
 
 // 1.3 Checkbox
@@ -60,7 +60,6 @@ $form->addFieldset($addon->i18n('config_legend2'));
 // 2.1 Media-Widget
 $field = $form->addMediaField('file');
 $field->setLabel($addon->i18n('config_file'));
-$field->setAttribute('id', 'medienpool-linkmap-usw-file');
 
 // 2.2 MediaList-Widget
 $field = $form->addMediaListField('files');
@@ -75,16 +74,13 @@ $field = $form->addLinklistField('articles');
 $field->setLabel($addon->i18n('config_articles'));
 
 // 2.5 Kategorienauswahl
-$category_select = new rex_category_select(false, false, false, true);
-$category_select->setName('medienpool_linkmap_usw_[categories]');
-$category_select->setId('demo_addon-config-categories');
-$category_select->setSize('10');
-$category_select->setMultiple(true);
-$category_select->setAttribute('style', 'width:100%');
-$category_select->setSelected($this->getConfig('categories'));
-$html = $category_select->get();
-$field = $form->addRawField($html);
+$field = $form->addSelectField('categories', null, ['class' => 'form-control']);
 $field->setLabel($addon->i18n('config_categories'));
+$field->setSelect(new rex_category_select(false, false, false, true));
+$category_select = $field->getSelect();
+$category_select->setSize('10');
+$category_select->setAttribute('multiple', 'multiple');
+$category_select->setAttribute('class', 'form-control');
 
 // Ausgabe des Formulars
 $fragment = new rex_fragment();

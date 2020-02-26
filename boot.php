@@ -4,9 +4,11 @@
 
 // Diese Datei ist keine Pflichdatei mehr.
 
+$addon = rex_addon::get('demo_addon');
+
 // Daten wie Autor, Version, Subpages etc. sollten wenn möglich in der package.yml notiert werden.
 // Sie können aber auch weiterhin hier gesetzt werden:
-$this->setProperty('author', 'Friends Of REDAXO');
+$addon->setProperty('author', 'Friends Of REDAXO');
 
 // Die Datei sollte keine veränderbare Konfigurationen mehr enthalten, um die Updatefähigkeit zu erhalten.
 // Stattdessen sollte dafür die rex_config verwendet werden (siehe install.php)
@@ -25,11 +27,11 @@ if (rex::isBackend() && is_object(rex::getUser())) {
 // Assets im Backend einbinden, nur beim demo_addon
 if (rex::isBackend() && rex::getUser() && 'demo_addon' == rex_be_controller::getCurrentPagePart(1)) {
     // Die style.css bei allen Pages und Subpages des Addons im Backend einbinden
-    rex_view::addCssFile($this->getAssetsUrl('css/style.css'));
+    rex_view::addCssFile($addon->getAssetsUrl('css/style.css'));
 
     // Die script.js nur auf der Unterseite »config« des Addons einbinden
     if ('config' == rex_be_controller::getCurrentPagePart(2)) {
-        rex_view::addJsFile($this->getAssetsUrl('js/script.js'));
+        rex_view::addJsFile($addon->getAssetsUrl('js/script.js'));
     }
 
     // JavaScript-Variable für das Backend im Head-Bereich setzen (var rex[])

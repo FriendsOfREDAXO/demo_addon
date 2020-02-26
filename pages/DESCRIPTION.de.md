@@ -37,7 +37,7 @@ z.B.
 * Verzeichnis ./lib/
 
 Alles ist natürlich auch in der [REDAXO-Dokumentation](https://redaxo.org/doku/master) zu finden und kann dort detailliert nachgeschlagen werden.
-
+Im Quellcode sind an den entsprechenden Stellen direkte Links auf die REDAXO-Dokumentation vorhanden.
 
 ## Extension Points
 
@@ -49,11 +49,11 @@ Im Verzeichnis pages/extensionpoints/ gibt es viele Beispiele für Extension Poi
 
 ## Sonstiges
 
-TODO
+**TODO**
 
-. zusätzlichen Menüpunkt einbinden wenn Addon xy installiert ist
+. zusätzlichen Menüpunkt einbinden wenn Addon xy installiert ist (siehe auch https://github.com/redaxo/docs/issues/136)
 . Beschreibung und Anwendung Permission-Check rex::getUser()->hasPerm('meinaddon[delete]')
-. Tabellenverwaltung aktivieren/deaktivieren per Ajax
+. Tabellenverwaltung aktivieren/deaktivieren von Datensätzen per Ajax
 . Hinweise bzw. Verbesserungen gerne als [Issue](https://github.com/FriendsOfREDAXO/demo_addon/issues) auf github.
 
 ## Credits
