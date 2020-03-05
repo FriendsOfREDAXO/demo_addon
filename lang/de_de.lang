@@ -1,7 +1,7 @@
 # Da R5 nur noch mit UTF8 arbeitet, entfällt der "utf8"-Suffix
 
 # Die Keys sollten mit dem Addonnamen (Addon-Präfix) beginnen, da sie so innerhalb des Addons vereinfacht abgefragt werden können
-# also hier Addon-Präfix 'demo_addon_'
+# also hier Addon-Präfix `demo_addon_`
 
 # Bezeichnung in der REDAXO-Navigation -> translate:navititle in der package.yml
 demo_addon_navititle = Demo-Addon
@@ -11,7 +11,7 @@ demo_addon_title = REDAXO Demo-Addon
 
 # Eigener Block mit Bezeichnung in der REDAXO-Navigation
 # in der package.yml des Addons folgendes unter page angeben: `block: demo_addon`
-# `navigation_` + addon-Name hier also `navigation_demo_addon`
+# `navigation_` + `addon-Name` hier also `navigation_demo_addon`
 navigation_demo_addon = DEMO-Addon
 
 # Hauptnavi-Punkte des Addons
@@ -26,6 +26,7 @@ demo_addon_description = Beschreibung
 demo_addon_readme = README
 demo_addon_changelog = CHANGELOG
 demo_addon_properties = Properties
+demo_addon_properties_title = Addon-Properties
 demo_addon_hidden_subpage = Versteckte Unterseite
 
 # Reiter Einstellungen
@@ -83,6 +84,10 @@ demo_addon_list_activated = Datensatz wurde aktiviert!
 demo_addon_list_deactivated = Datensatz wurde deaktiviert!
 demo_addon_list_error = Beim Datenbank-Update ist ein Fehler aufgetreten!
 
-# Benennung für die Addonrechte, sichtbar innerhalb der REDAXO-Administration unter Benutzer > Rollen > Allgemein
+# Reiter Extension Points
+demo_addon_eplist = Liste der Extension Points
+
+# Benennung für die Addonrechte
+# sichtbar innerhalb der REDAXO-Administration unter `Benutzer > Rollen > Allgemein`
 perm_general_demo_addon[] = Rechte für Demo-Addon
 perm_general_demo_addon[config] = Rechte für Demo-Addon-Konfiguration

@@ -1,7 +1,5 @@
 <?php
 
-/** @var rex_addon $this */
-
 // Diese Datei ist keine Pflichtdatei mehr.
 
 // Addon-Objekt bereitstellen und Data-Verzeichnis löschen (redaxo\data\addons\demo_addon\)

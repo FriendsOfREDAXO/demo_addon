@@ -1,7 +1,5 @@
 <?php
 
-/** @var rex_addon $this */
-
 // Diese Datei wird beim Update eines Addons über den Installer aufgerufen
 
 // Hier können zum Beispiel DB-Tabellen angepasst werden

@@ -1,11 +1,9 @@
 <?php
 
-/** @var rex_addon $this */
-
 // Diese Datei ist keine Pflichtdatei mehr.
 
 // SQL-Anweisungen können auch weiterhin über die install.sql ausgeführt werden.
-// Empfohlen wird aber die SQL-Anweisungen in der install.php mit der Klasse rex_sql_table auszuführen
+// Empfohlen wird aber die SQL-Anweisungen in der install.php mit der Klasse `rex_sql_table` auszuführen
 // Siehe auch https://redaxo.org/doku/master/datenbank-tabellen
 
 // Hier wird die Beispiel-Tabelle des Demo-Addons erstellt falls noch nicht vorhanden

@@ -1,7 +1,5 @@
 <?php
 
-/** @var rex_addon $this */
-
 // Diese Datei ist keine Pflichdatei mehr.
 
 $addon = rex_addon::get('demo_addon');
@@ -29,9 +27,14 @@ if (rex::isBackend() && rex::getUser() && 'demo_addon' == rex_be_controller::get
     // Die style.css bei allen Pages und Subpages des Addons im Backend einbinden
     rex_view::addCssFile($addon->getAssetsUrl('css/style.css'));
 
-    // Die script.js nur auf der Unterseite »config« des Addons einbinden
+    // Die script.js nur auf der Unterseite `config` des Addons einbinden
     if ('config' == rex_be_controller::getCurrentPagePart(2)) {
-        rex_view::addJsFile($addon->getAssetsUrl('js/script.js'));
+        rex_view::addJsFile($addon->getAssetsUrl('js/script.js'), [rex_view::JS_IMMUTABLE => true]);
+    }
+
+    // Die eps.js nur auf der Unterseite `eplist` des Addons einbinden
+    if ('eps' == rex_be_controller::getCurrentPagePart(2) && 'eplist' == rex_be_controller::getCurrentPagePart(3)) {
+        rex_view::addJsFile($addon->getAssetsUrl('js/eps.js'), [rex_view::JS_IMMUTABLE => true]);
     }
 
     // JavaScript-Variable für das Backend im Head-Bereich setzen (var rex[])

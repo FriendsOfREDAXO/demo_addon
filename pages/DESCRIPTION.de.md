@@ -51,6 +51,7 @@ Im Verzeichnis pages/extensionpoints/ gibt es viele Beispiele für Extension Poi
 
 **TODO**
 
+. Validierungen bei den Einstellungen (klassisch und rex_config_form)
 . zusätzlichen Menüpunkt einbinden wenn Addon xy installiert ist (siehe auch https://github.com/redaxo/docs/issues/136)
 . Beschreibung und Anwendung Permission-Check rex::getUser()->hasPerm('meinaddon[delete]')
 . Tabellenverwaltung aktivieren/deaktivieren von Datensätzen per Ajax

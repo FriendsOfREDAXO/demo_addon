@@ -1,14 +1,15 @@
 # Changelog
 
-## Version 1.2.0beta1 // 15.02.2020
+## Version 1.2.0beta1 // 15.03.2020
 
 Neu
 
 * Addon-Struktur, Navigation komplett überarbeitet/erweitert
-* Addon-Einstellungen erweitert
+* Addon-Einstellungen (klassisch) erweitert
 * Addon-Einstellungen mit rex_config_form
 * Demo-Tabelle in install.php und uninstall.php
 * Verwaltung der Demo-Tabelle mit rex_list und rex_form
+  * Klasse demo_addon_rex_form extends rex_form
 * Demo-Seite für die Abfrage von Addon-Properties hinzugefügt
 * Quelltexte usw. kommentiert und verlinkt auf die REDAXO-Dokumentation
 
