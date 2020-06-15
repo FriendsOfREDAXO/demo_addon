@@ -1,2 +1,50 @@
-.demo_addon {
+/*
+Demo-AddOn
+Diese CSS-Datei wird in der `boot.php` des AddOns `demo_addon` im Backend eingebunden (rex_view::addCssFile)
+https://redaxo.org/doku/master/addon-assets
+*/
+
+/* externe Links */
+
+a.extern:after {
+  color: #d4d4d4;
+  text-decoration: none;
+  font-family: 'FontAwesome';
+  font-size: .8em;
+  content: " \f08e";
+}
+
+/* Aufklappbarer Text bei der EP-Liste */
+
+.demo-addon-section .panel header .folddown {
+  display: none;
+}
+.demo-addon-section .panel header.collapsed .folddown {
+  display: block;
+}
+
+.demo-addon-section .panel header .foldup {
+  display: block;
+}
+.demo-addon-section .panel header.collapsed .foldup {
+  display: none;
+}
+
+.demo-addon-section .panel header .folddown,
+.demo-addon-section .panel header .foldup
+ {
+  background-color: inherit;
+  float: right;
+}
+
+/* Textblock mit Inhalt der Markdown-Datei im aufklappbaren Text */
+
+.demo-addon-section .readme {
+  padding: 10px 10px 0px 10px;
+}
+
+/* Textarea-Block mit Codemirror für den PHP-Code im aufklappbaren Text */
+
+.demo-addon-section .phpcode {
+  padding: 10px 10px 10px 10px;
 }

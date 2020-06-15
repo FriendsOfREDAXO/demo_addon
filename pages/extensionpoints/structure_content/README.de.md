@@ -1,0 +1,1 @@
+## Structure Content Extension Points

@@ -1,30 +1,105 @@
 # Da R5 nur noch mit UTF8 arbeitet, entfällt der "utf8"-Suffix
 
-# Die Keys sollten mit dem Addonnamen beginnen, da sie so innerhalb des Addons vereinfacht abgefragt werden können
+# Die Keys sollten mit dem Addonnamen (AddOn-Präfix) beginnen, da sie so innerhalb des AddOns vereinfacht abgefragt werden können
+# also hier AddOn-Präfix `demo_addon_`
 
-demo_addon_title = Demo-Addon
+# Bezeichnung in der REDAXO-Navigation -> translate:navititle in der package.yml
+demo_addon_navititle = Demo-AddOn
 
-demo_addon_main = Hauptseite
-demo_addon_main_title = Demo-Addon Titel Hauptseite
-demo_addon_main_content = Inhalt Demo-Addon-Seite
+# AddOn-Titel für alle AddOn-Seiten, AddOn-Präfix (hier `demo_addon_`) + `title` -> `demo_addon_title`
+demo_addon_title = REDAXO Demo-AddOn
 
+# Eigener Block mit Bezeichnung in der REDAXO-Navigation
+# in der package.yml des AddOns folgendes unter page angeben: `block: demo_addon`
+# `navigation_` + `addon-Name` hier also `navigation_demo_addon`
+navigation_demo_addon = DEMO-AddOn
+
+# Hauptnavi-Punkte des AddOns
+demo_addon_intro = Demo-AddOn
 demo_addon_config = Einstellungen
+demo_addon_tables = Tabellen
+demo_addon_eps = Extension Points
+demo_addon_hidden_page = Versteckte Seite
+
+# Reiter demo_addon
+demo_addon_description = Beschreibung
+demo_addon_readme = README
+demo_addon_changelog = CHANGELOG
+demo_addon_properties = Properties
+demo_addon_properties_title = AddOn-Properties
+demo_addon_hidden_subpage = Versteckte Unterseite
+
+# Reiter Einstellungen
+demo_addon_config_rex_config_form = mit rex_config_form
+demo_addon_config_classic_form = klassisch (rex_form / rex_list)
+
+demo_addon_config_title_rex_config = Einstellungen mit rex_config_form
+demo_addon_config_title_classic = Einstellungen klassisch (rex_form, rex_list, Fragmente)
+
 demo_addon_config_legend1 = Einfache Felder
 demo_addon_config_url = URL
+demo_addon_config_text = Text
 demo_addon_config_checkbox = Checkbox
 demo_addon_config_select = Select
 demo_addon_config_multiselect = Multiselect
+demo_addon_config_multiselect_note = Mehrfachauswahl mit <kbd>STRG</kbd> bzw. <kbd>CMD</kbd>
+demo_addon_config_radio_fe = Frontend
+demo_addon_config_radio_be = Backend
 
-demo_addon_config_legend2 = Medienpool, Linkmap usw.
-demo_addon_config_file = Datei
+demo_addon_config_legend2 = Medienpool
+demo_addon_config_media = Datei
+demo_addon_config_medialist = Datei-Liste
+demo_addon_config_mediacategories = Medienkategorien
+
+demo_addon_config_legend3 = Linkmap usw.
 demo_addon_config_article = Artikel
+demo_addon_config_articlelist = Artikel-Liste
 demo_addon_config_categories = Kategorienauswahl
-demo_addon_config_pageids = Seitenauswahl
 
 demo_addon_config_save = Einstellungen speichern
 demo_addon_config_saved = Einstellungen wurden gespeichert!
 
-# Benennung für die Addonrechte, sichtbar innerhalb der REDAXO-Administration unter Benutzer > Rollen > Allgemein
+# Reiter Tabellen
+demo_addon_updatetable = Tabellenverwaltung
 
-perm_general_demo_addon[] = demo_addon[] - Rechte für Demo-Addon
-perm_general_demo_addon[config] = demo_addon[config] - Rechte für Demo-Addon-Konfiguration
+demo_addon_thead_title = Demo Tabellenverwaltung mit rex_list/rex_form
+demo_addon_thead_id = ID
+demo_addon_thead_anrede = Anrede
+demo_addon_thead_vorname = Vorname
+demo_addon_thead_name = Name
+demo_addon_thead_strasse = Strasse
+demo_addon_thead_plz = PLZ
+demo_addon_thead_ort = Ort
+demo_addon_thead_birthdate = Geburtsdatum
+demo_addon_thead_status = Status
+demo_addon_thead_func = Funktionen
+demo_addon_list_no_rows = Keine Einträge vorhanden!
+demo_addon_list_mr = Herr
+demo_addon_list_mrs = Frau
+demo_addon_list_active = aktiv
+demo_addon_list_inactive = inaktiv
+demo_addon_list_edit = Datensatz bearbeiten
+demo_addon_list_create_new_entry = Neuen Datensatz anlegen
+demo_addon_confirm_delete = Datensatz löschen?
+demo_addon_delete = Löschen
+demo_addon_list_deleted = Datensatz wurde gelöscht!
+demo_addon_list_activated = Datensatz wurde aktiviert!
+demo_addon_list_deactivated = Datensatz wurde deaktiviert!
+demo_addon_list_error = Beim Datenbank-Update ist ein Fehler aufgetreten!
+
+# Reiter Extension Points
+demo_addon_eplist = Liste der Extension Points
+demo_addon_logfile = Logfile
+demo_addon_eplist_title = Liste der Beispiel Extension Points im Demo AddOn
+
+# Logdatei
+demo_addon_log_timestamp = Zeit
+demo_addon_logid = EP
+demo_addon_log_message = Ausgabe
+demo_addon_log_deleted = Logfile wurde gelöscht
+demo_addon_log_delete_error = Fehler beim löschen des Logfiles
+
+# Benennung für die Addonrechte
+# sichtbar innerhalb der REDAXO-Administration unter `Benutzer > Rollen > Allgemein`
+perm_general_demo_addon[] = Rechte für Demo-AddOn
+perm_general_demo_addon[config] = Rechte für Demo-AddOn-Konfiguration

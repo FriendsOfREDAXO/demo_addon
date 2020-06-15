@@ -1,22 +1,32 @@
-# Beispiel-Addon für REDAXO 5
+# Sample AddOn for REDAXO 5
 
-Zeigt den Aufbau und Basisfunktionalität von Addons.
+The AddOn `demo_addon` shows the structure and basic functionality of AddOns and many examples of REDAXO functions for use in your own AddOns. The addon or just parts of it can / should be used for the development of your own AddOns.
+Extensions to the `demo_addon` AddOn, like PR (pull request) or notes or improvements as an [issue](https://github.com/FriendsOfREDAXO/demo_addon/issues).
 
-* `documentation`-Plugin als Basis für eine Hilfe/Dokumentation für REDAXO5-AddOns
-* Hauptseite des Addons - Beschreibungen der Beispiele in einzelnen Blöcken und Hinweise auf den PHP-Code <sup><b>(todo)</b></sup>
-* Quellcode dokumentieren <sup><b>(todo)</b></sup>
-* Addon-Einstellungen in Tabelle `rex_config` speichern
-* Beispiel einer Tabellenverwaltung mit `rex_form` (inkl. Beispieltabelle) <sup><b>(todo)</b></sup>
-* Beispiel Extension Point(s) <sup><b>(todo)</b></sup>
-* ...
+## demo_addon in the short overview
 
-## AddOn-Entwicklung in der REDAXO-Dokumentation
+- Documented source code with examples
+- documented `package.yml`
+- documented .lang file
+- AddOn settings (rex_config_form, classic)
+- Example of a table management with `rex_list` and `rex_form` (incl. Example table)
+- Examples of extension points
+- `documentation` plugin as the basis for help / documentation for REDAXO add-ons
 
-* [Aufbau und Struktur](https://redaxo.org/doku/master/addon-struktur)
-* [Package (package.yml](https://redaxo.org/doku/master/addon-package)
-* [Assets](https://redaxo.org/doku/master/addon-assets)
-* [AddOn Veröffentlichung](https://redaxo.org/doku/master/addon-veroeffentlichung)
+## AddOn development in the REDAXO documentation
 
-## Sonstiges
+- [AddOn - Structure and structure](https://redaxo.org/doku/master/addon-struktur)
+- [Package (package.yml)](https://redaxo.org/doku/master/addon-package)
+- [AddOn Assets (CSS, JavaScript ...)](https://redaxo.org/doku/master/addon-assets)
+- [Configuration forms for AddOns](https://redaxo.org/doku/master/konfiguration_form)
+- [AddOn publication](https://redaxo.org/doku/master/addon-veroeffständigung)
+- [Queries - rex_sql](https://www.redaxo.org/doku/master/datenbank-queries)
 
-Bitte auch den Artikel "[Änderungen REDAXO 4 zu 5](https://redaxo.org/doku/master/aenderungen-v4-v5)" in der REDAXO-Dokumentation beachten!
+## Others
+
+- [GitHub Repository REDAXO Core](https://github.com/redaxo/redaxo/)
+- [REDAXO 5 documentation](https://redaxo.org/doku/master)
+- REDAXO [API Dcumentation](https://friendsofredaxo.github.io/phpdoc/) at Friends Of REDAXO
+- FOR-AddOns [FriendsOfREDAXO](https://github.com/FriendsOfREDAXO)
+- A collection of useful tricks for REDAXO CMS from version 5 [REDAXO tricks of the Friends Of REDAXO](https://friendsofredaxo.github.io/tricks)
+- Please also note the article [Changes to REDAXO 4 to 5](https://redaxo.org/doku/master/aenderungen-v4-v5) in the REDAXO documentation!
