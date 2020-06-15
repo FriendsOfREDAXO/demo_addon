@@ -12,5 +12,5 @@ echo rex_view::title($addon->i18n('title')); // $addon->i18n('title') ist eine K
 $subpage = rex_be_controller::getCurrentPagePart(2);
 
 // Subpages können über diese Methode eingebunden werden. So ist sichergestellt, dass auch Subpages funktionieren,
-// die von anderen Addons/Plugins hinzugefügt wurden
+// die von anderen AddOns/Plugins hinzugefügt wurden
 rex_be_controller::includeCurrentPageSubPath();

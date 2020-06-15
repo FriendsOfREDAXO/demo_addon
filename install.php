@@ -1,12 +1,18 @@
 <?php
 
 // Diese Datei ist keine Pflichtdatei mehr.
+// Wird automatisch bei der Installation ausgeführt
+// (z.B. Anlegen von Datenbanken, Installation von Modulen, bestimmte Prüfungen, Festlegen erster Konfigurationswerte)
 
-// SQL-Anweisungen können auch weiterhin über die install.sql ausgeführt werden.
-// Empfohlen wird aber die SQL-Anweisungen in der install.php mit der Klasse `rex_sql_table` auszuführen
+$addon = rex_addon::get('demo_addon');
+
+// SQL-Anweisungen können auch weiterhin über die `install.sql` ausgeführt werden.
+// Empfohlen wird aber die SQL-Anweisungen in der `install.php` mit der Klasse `rex_sql_table` auszuführen.
 // Siehe auch https://redaxo.org/doku/master/datenbank-tabellen
 
-// Hier wird die Beispiel-Tabelle des Demo-Addons erstellt falls noch nicht vorhanden
+// Hier wird die Beispiel-Tabelle `rex_demo_addon` des Demo-AddOns erstellt falls noch nicht vorhanden.
+// Hinweis: rex::getTable() erweitert den Tabellennamen um den Tabellen-Prefix aus der `config.yml`
+// Hinweis: rex::getTablePrefix() liefert den Tabellen-Prefix aus der `config.yml`, https://redaxo.org/doku/master/eigenschaften#get-table-prefix
 rex_sql_table::get(rex::getTable('demo_addon'))
     ->ensurePrimaryIdColumn()
     ->ensureColumn(new rex_sql_column('anrede', 'tinyint(1)', true, 1))
@@ -19,7 +25,7 @@ rex_sql_table::get(rex::getTable('demo_addon'))
     ->ensureColumn(new rex_sql_column('status', 'tinyint(1)', true, 1))
     ->ensure();
 
-// Bei Addon-Installation/Reinstallation folgende Beispiel-Daten importieren
+// Bei AddOn-Installation/Reinstallation folgende Beispiel-Daten importieren
 $demodata = [
     ['id' => 1, 'anrede' => 1, 'vorname' => 'Max', 'name' => 'Muster', 'strasse' => 'Schönstr. 1', 'plz' => '81333', 'ort' => 'München', 'birthdate' => '1966-01-01', 'status' => 1],
     ['id' => 2, 'anrede' => 1, 'vorname' => 'Mario', 'name' => 'Neumann', 'strasse' => 'Waldweg 11a', 'plz' => '84405', 'ort' => 'Dorfen', 'birthdate' => '1968-06-06', 'status' => 1],
@@ -41,24 +47,26 @@ foreach ($demodata as $row) {
 }
 $sql->insertOrUpdate();
 
-// Abhängigkeiten (PHP-Version, PHP-Extensions, Redaxo-Version, andere Addons/Plugins) sollten in die package.yml eingetragen werden.
+// Abhängigkeiten (PHP-Version, PHP-Extensions, Redaxo-Version, andere AddOns/Plugins) sollten in die `package.yml` eingetragen werden.
 // Sie brauchen hier dann nicht mehr überprüft werden!
 
-// Hier können zum Beispiel Konfigurationswerte in der rex_config initialisiert werden.
-// Das if-Statement ist notwendig, um bei einem reinstall die Konfiguration nicht zu überschreiben.
-if (!$this->hasConfig()) {
-    $this->setConfig('url', 'https://friendsofredaxo.github.io/');
+// Hier können zum Beispiel Konfigurationswerte in der `rex_config` initialisiert werden.
+// Dokumentation Konfiguration https://www.redaxo.org/doku/master/konfiguration
+// Das if-Statement ist notwendig, um bei einem reinstall die Konfiguration nicht zu überschreiben, oder bei Erstinstallation Standardwerte zu setzen.
+if (!$addon->hasConfig()) {
+    $addon->setConfig('url', 'https://friendsofredaxo.github.io/');
+    $addon->setConfig('text', 'Beispieltext ...');
 }
 
-// Mit einer rex_functional_exception kann die Installation mit einer Fehlermeldung abgebrochen werden.
+// Mit einer `rex_functional_exception` kann die Installation mit einer Fehlermeldung abgebrochen werden.
 $somethingIsWrong = false;
 if ($somethingIsWrong) {
     throw new rex_functional_exception('Something is wrong');
 }
 
-// Alternativ kann ähnlich wie in R4 mit den Properties "install" und "installmsg" die Installation als nicht erfolgreich markiert werden.
+// Alternativ kann ähnlich wie in R4 mit den Properties `install` und `installmsg` die Installation als nicht erfolgreich markiert werden.
 // Im Gegensatz zu R4 muss für eine erfolgreiche Installation keine Property mehr gesetzt werden.
 if ($somethingIsWrong) {
-    $this->setProperty('installmsg', 'Something is wrong');
-    $this->setProperty('install', false);
+    $addon->setProperty('installmsg', 'Something is wrong');
+    $addon->setProperty('install', false);
 }

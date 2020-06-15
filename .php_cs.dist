@@ -1,8 +1,8 @@
 <?php
 
 // REDAXO-Coding-Standards
-// https://github.com/redaxo/redaxo/blob/master/.php_cs.dist
 // kann z.B. mit PHPStorm, oder mit VS Code mit der Extension `php cs fixer` verwendet werden
+// https://github.com/redaxo/redaxo/blob/master/.php_cs.dist
 
 $finder = PhpCsFixer\Finder::create()
     ->in([__DIR__]);

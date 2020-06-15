@@ -3,7 +3,7 @@
 $addon = rex_addon::get('demo_addon');
 
 // Custom-Function zum prüfen des Geburtsdatums
-// Diese function kann auch in der boot.php des Addons notiert werden
+// Diese function kann auch in der boot.php des AddOns notiert werden
 // Return `false` wenn das Datum ungültig ist, `true` wenn das Datum gültig ist
 function demoAddon_checkBirthdate($date)
 {
@@ -34,7 +34,7 @@ $start = rex_request('start', 'int', -1); // Start der Liste, Parameter $listNam
 if (-1 == $start) {
     $start = rex_request('Demo-Liste_start', 'int', 0);
 }
-rex_addon::get('demo_addon')->setProperty('list_start', $start);
+$addon->setProperty('list_start', $start);
 
 // Bei vorhandener Funktion (add/edit/delete) eine rex_sql-Instanz erstellen
 // https://www.redaxo.org/doku/master/datenbank-queries
@@ -135,13 +135,14 @@ if (in_array($func, ['add', 'edit'])) {
     $field->setLabel($addon->i18n('thead_birthdate'));
     $field->setAttribute('style', 'width: 150px;');
     $field->setAttribute('maxlength', '10');
-    // MySQL-Datum in deutsches Datum umformatieren
+    // MySQL-Datum für die Ausgabe in deutsches Datum umformatieren
     // gespeichert wird im Format YYYY-MM-DD, angezeigt im Format tt.mm.jjjj
     if ($field->getValue()) {
         $field->setValue(date('d.m.Y', strtotime($field->getValue())));
     }
     $field->getValidator()->add('notEmpty', 'Das Feld Geburtsdatum darf nicht leer sein.');
     // Custom-Function `demoAddon_checkBirthdate` für die Prüfung des Geburtsdatums
+    // Die Function ist oben am Anfang definiert
     $field->getValidator()->add('custom', 'Geburtsdatum ungültig', 'demoAddon_checkBirthdate');
 
     // Select Status
@@ -160,6 +161,8 @@ if (in_array($func, ['add', 'edit'])) {
     $fragment->setVar('body', $content, false);
     $content = $fragment->parse('core/page/section.php');
     echo $content;
+
+    // Exit - da sonst noch die Liste nach dem Formular generiert wird
     exit;
 }
 
@@ -171,7 +174,7 @@ if (in_array($func, ['add', 'edit'])) {
 
 // Alle ausgewählten Felder des Queries werden als Spalten in der Liste angezeigt
 // Die einzelnen Spalten können noch verändert/erweitert werden ... siehe weiter unten
-// Mit dem Parameter $rowsPerPage (hier 30) kann die Anzahl der Listeinträge festgelegt werden
+// Mit dem Parameter $rowsPerPage kann die Anzahl der Listeinträge festgelegt werden
 // Sind mehr Datensätze vorhanden wird automatisch eine Pagination ausgegeben
 $list = rex_list::factory(
     '
@@ -179,7 +182,7 @@ $list = rex_list::factory(
     FROM ' . rex::getTable('demo_addon') . '
     ORDER by `name` ASC, `vorname` ASC
     ',
-    3, 'Demo-Liste', false);
+    $addon->getProperty('tableupdate.listEntries', 30), 'Demo-Liste', false);
 
 // Spalten können mit removeColumn('columnname') entfernt werden
 //$list->removeColumn('id');
@@ -196,7 +199,7 @@ $list->setColumnSortable('name', 'asc');
 // Spalte mit Editier-Icon am Zeilen-Anfang hinzufügen (Parameter 3 bei addColumn = 0)
 // $thIcon: Icon für die Überschriftenzeile mit Link 'func=add'
 // $tdIcon: Icon für die Datenzeilen mit Link 'func=edit'
-// zum ändern des Icons 'rex-icon-editmode' durch das gewünschte Icon ersetzen
+// zum ändern des Icons: 'rex-icon-editmode' durch das gewünschte Icon ersetzen
 $thIcon = '<a href="' . $list->getUrl(['func' => 'add']) . '"' . rex::getAccesskey($addon->i18n('list_create_new_entry'), 'add') . ' title="' . $addon->i18n('create_new_entry') . '"><i class="rex-icon rex-icon-add"></i></a>';
 $tdIcon = '<i class="rex-icon rex-icon-editmode" title="' . $addon->i18n('list_edit') . ' [###id###]"></i>';
 $list->addColumn($thIcon, $tdIcon, 0, ['<th class="rex-table-icon">###VALUE###</th>', '<td class="rex-table-icon">###VALUE###</td>']);
@@ -240,6 +243,10 @@ $list->setColumnFormat('anrede', 'custom', static function ($params) {
     $str = (1 == $list->getValue('anrede')) ? rex_i18n::msg('demo_addon_list_mr') : rex_i18n::msg('demo_addon_list_mrs');
     return $str;
 });
+
+// Spalte Vorname + Name, Felder klickbar zum editieren
+$list->setColumnParams('vorname', ['func' => 'edit', 'id' => '###id###']);
+$list->setColumnParams('name', ['func' => 'edit', 'id' => '###id###']);
 
 // Spalte Geburtsdatum (birthdate) anpassen
 // In der Tabelle wird das Datum im Format YYYY-MM-DD gespeichert
