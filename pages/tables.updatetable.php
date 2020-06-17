@@ -200,7 +200,7 @@ $list->setColumnSortable('name', 'asc');
 // $thIcon: Icon für die Überschriftenzeile mit Link 'func=add'
 // $tdIcon: Icon für die Datenzeilen mit Link 'func=edit'
 // zum ändern des Icons: 'rex-icon-editmode' durch das gewünschte Icon ersetzen
-$thIcon = '<a href="' . $list->getUrl(['func' => 'add']) . '"' . rex::getAccesskey($addon->i18n('list_create_new_entry'), 'add') . ' title="' . $addon->i18n('create_new_entry') . '"><i class="rex-icon rex-icon-add"></i></a>';
+$thIcon = '<a href="' . $list->getUrl(['func' => 'add']) . '"' . rex::getAccesskey($addon->i18n('list_create_new_entry'), 'add') . ' title="' . $addon->i18n('list_create_new_entry') . '"><i class="rex-icon rex-icon-add"></i></a>';
 $tdIcon = '<i class="rex-icon rex-icon-editmode" title="' . $addon->i18n('list_edit') . ' [###id###]"></i>';
 $list->addColumn($thIcon, $tdIcon, 0, ['<th class="rex-table-icon">###VALUE###</th>', '<td class="rex-table-icon">###VALUE###</td>']);
 $list->setColumnParams($thIcon, ['func' => 'edit', 'id' => '###id###', 'start' => $start]);
