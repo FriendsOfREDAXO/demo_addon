@@ -30,6 +30,7 @@ class demo_addon_logger extends rex_log_file
         $data = [
             $logname,
             $logstr,
+            rex::isFrontend(),
         ];
 
         self::$logfile->add($data);

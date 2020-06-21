@@ -61,6 +61,9 @@ foreach (new LimitIterator($file, 0, $addon->getProperty('logfile.listEntries', 
     /** @var rex_log_entry $entry */
     $data = $entry->getData();
     $class = 'notice';
+    if ('1' === $data[2]) {
+        $class = 'warning';
+    }
 
     $content .= '
                 <tr class="rex-state-' . $class . '">
