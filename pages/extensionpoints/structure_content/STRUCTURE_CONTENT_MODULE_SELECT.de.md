@@ -1,6 +1,5 @@
 
-**Beschreibung:** ...
-
+**Beschreibung:** `STRUCTURE_CONTENT_MODULE_SELECT`
 
 **Übergabewerte**
 

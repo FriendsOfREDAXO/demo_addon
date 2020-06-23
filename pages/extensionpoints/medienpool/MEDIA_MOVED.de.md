@@ -4,6 +4,6 @@
 **Übergabewerte**
 
 ```
-Subject: $title
-Parameter: keine
+Subject: ...
+Parameter: ...
 ```

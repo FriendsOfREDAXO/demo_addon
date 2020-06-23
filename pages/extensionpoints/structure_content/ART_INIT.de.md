@@ -1,6 +1,5 @@
 
-**Beschreibung:** ...
-
+**Beschreibung:** `ART_INIT`
 
 **Übergabewerte**
 

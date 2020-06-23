@@ -1,5 +1,5 @@
 
-**Beschreibung:** `PAGE_CHECKED`
+**Beschreibung:** Der EP `PAGE_CHECKED` enthält das nach dem EP `PAGES_PREPARED` evtl. veränderte Pages-Objekt (rex_be_controller::getPages()).
 
 **Übergabewerte**
 

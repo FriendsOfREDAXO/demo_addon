@@ -1,6 +1,5 @@
 
-**Beschreibung:** ...
-
+**Beschreibung:** `ART_STATUS_TYPES`
 
 **Übergabewerte**
 

@@ -1,6 +1,5 @@
 
-**Beschreibung:** ...
-
+**Beschreibung:** `CAT_STATUS_TYPES`
 
 **Übergabewerte**
 

@@ -1,5 +1,5 @@
 
-**Beschreibung:** `PAGE_TITLE`
+**Beschreibung:** Mit dem EP `PAGE_TITLE` kann im Backend der Seitentitel angepasst werden.
 
 **Übergabewerte**
 

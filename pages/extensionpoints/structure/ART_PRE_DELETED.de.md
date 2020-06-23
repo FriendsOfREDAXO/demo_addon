@@ -1,6 +1,5 @@
 
-**Beschreibung:** ...
-
+**Beschreibung:** `ART_PRE_DELETED`
 
 **Übergabewerte**
 

@@ -1,6 +1,5 @@
 
-**Beschreibung:** ...
-
+**Beschreibung:** `CAT_IS_PERMITTED`
 
 **Übergabewerte**
 

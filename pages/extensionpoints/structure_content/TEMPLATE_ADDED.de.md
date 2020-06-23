@@ -1,6 +1,5 @@
 
-**Beschreibung:** ...
-
+**Beschreibung:** `TEMPLATE_ADDED`
 
 **Übergabewerte**
 

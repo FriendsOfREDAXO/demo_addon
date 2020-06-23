@@ -1,6 +1,5 @@
 
-**Beschreibung:** ...
-
+**Beschreibung:** `CAT_UPDATED`
 
 **Übergabewerte**
 

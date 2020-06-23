@@ -1,6 +1,5 @@
 
-**Beschreibung:** ...
-
+**Beschreibung:** `GENERATE_FILTER`
 
 **Übergabewerte**
 

@@ -1,6 +1,5 @@
 
-**Beschreibung:** ...
-
+**Beschreibung:** `CAT_DELETED`
 
 **Übergabewerte**
 

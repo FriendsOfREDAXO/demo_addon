@@ -7,6 +7,6 @@ rex_extension::register('PACKAGES_INCLUDED', static function (rex_extension_poin
 
     // Modus und URL für die Logfile-Ausgabe
     $rxmode = (rex::isBackend() && rex::getUser()) ? 'Backend' : 'Frontend';
-    $url = " - $_SERVER[REQUEST_URI]";
+    $url = $_SERVER['REQUEST_URI'];
     demo_addon_logger::log('Mode: ' . $rxmode . '<br>URL: ' . $url, $ep->getName());
 });
