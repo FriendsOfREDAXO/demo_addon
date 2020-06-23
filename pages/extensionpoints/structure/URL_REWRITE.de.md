@@ -1,6 +1,5 @@
 
-**Beschreibung:** ...
-
+**Beschreibung:** `URL_REWRITE`
 
 **Übergabewerte**
 

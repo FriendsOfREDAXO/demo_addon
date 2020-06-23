@@ -1,6 +1,5 @@
 
-**Beschreibung:** ...
-
+**Beschreibung:** `SLICE_UPDATE`
 
 **Übergabewerte**
 

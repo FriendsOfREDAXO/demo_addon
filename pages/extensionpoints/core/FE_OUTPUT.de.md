@@ -7,6 +7,6 @@ Durch setSubject kann hier noch vor Ausgabe der Webseite eine Ausgabe generiert 
 **Übergabewerte**
 
 ```
-Subject: Content
+Subject: $content
 Parameter: keine
 ```

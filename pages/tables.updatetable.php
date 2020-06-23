@@ -200,7 +200,7 @@ $list->setColumnSortable('name', 'asc');
 // $thIcon: Icon für die Überschriftenzeile mit Link 'func=add'
 // $tdIcon: Icon für die Datenzeilen mit Link 'func=edit'
 // zum ändern des Icons: 'rex-icon-editmode' durch das gewünschte Icon ersetzen
-$thIcon = '<a href="' . $list->getUrl(['func' => 'add']) . '"' . rex::getAccesskey($addon->i18n('list_create_new_entry'), 'add') . ' title="' . $addon->i18n('create_new_entry') . '"><i class="rex-icon rex-icon-add"></i></a>';
+$thIcon = '<a href="' . $list->getUrl(['func' => 'add']) . '"' . rex::getAccesskey($addon->i18n('list_create_new_entry'), 'add') . ' title="' . $addon->i18n('list_create_new_entry') . '"><i class="rex-icon rex-icon-add"></i></a>';
 $tdIcon = '<i class="rex-icon rex-icon-editmode" title="' . $addon->i18n('list_edit') . ' [###id###]"></i>';
 $list->addColumn($thIcon, $tdIcon, 0, ['<th class="rex-table-icon">###VALUE###</th>', '<td class="rex-table-icon">###VALUE###</td>']);
 $list->setColumnParams($thIcon, ['func' => 'edit', 'id' => '###id###', 'start' => $start]);
@@ -239,7 +239,7 @@ $list->setColumnLabel('status', $addon->i18n('thead_status'));
 // In der Tabelle wird 1 für Herr und 2 für Frau abgespeichert und würde auch so angezeigt werden
 // Hier wird die Anzeige der Spalte entsprechend dem Feldinhalt angepasst
 $list->setColumnFormat('anrede', 'custom', static function ($params) {
-    $list = $params['list']; // $list enthält ein SQL-Objekt mit allen Felder aus dem DB-Select
+    $list = $params['list']; // $list enthält ein SQL-Objekt mit allen Feldern aus dem DB-Select
     $str = (1 == $list->getValue('anrede')) ? rex_i18n::msg('demo_addon_list_mr') : rex_i18n::msg('demo_addon_list_mrs');
     return $str;
 });
@@ -252,7 +252,7 @@ $list->setColumnParams('name', ['func' => 'edit', 'id' => '###id###']);
 // In der Tabelle wird das Datum im Format YYYY-MM-DD gespeichert
 // Hier wird für die Anzeige auf das deutsche Datumsformat tt.mm.jjjj umgewandelt
 $list->setColumnFormat('birthdate', 'custom', static function ($params) {
-    $list = $params['list'];
+    $list = $params['list']; // $list enthält ein SQL-Objekt mit allen Feldern aus dem DB-Select
     $str = date('d.m.Y', strtotime($list->getValue('birthdate')));
     return $str;
 });

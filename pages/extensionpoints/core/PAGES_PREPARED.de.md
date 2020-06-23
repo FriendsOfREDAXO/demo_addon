@@ -1,5 +1,5 @@
 
-**Beschreibung:** `PAGES_PREPARED`
+**Beschreibung:** Über den EP `PAGES_PREPARED` kann im Backend die REDAXO-Navigation mit den einzelnen Pages noch beeinflusst werden.
 
 **Übergabewerte**
 

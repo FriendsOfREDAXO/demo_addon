@@ -1,6 +1,5 @@
 
-**Beschreibung:** ...
-
+**Beschreibung:** `CAT_MOVED`
 
 **Übergabewerte**
 

@@ -1,6 +1,5 @@
 
-**Beschreibung:** ...
-
+**Beschreibung:** `MODULE_DELETED`
 
 **Übergabewerte**
 

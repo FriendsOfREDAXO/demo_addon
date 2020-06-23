@@ -1,6 +1,5 @@
 
-**Beschreibung:** ...
-
+**Beschreibung:** `ART_IS_PERMITTED`
 
 **Übergabewerte**
 

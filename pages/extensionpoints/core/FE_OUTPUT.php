@@ -6,5 +6,7 @@ rex_extension::register('FE_OUTPUT', static function (rex_extension_point $ep) {
     //(demo_addon_logger::log('<pre>' . $var . '</pre>', $ep->getName());
 
     $content = $ep->getSubject();
-    demo_addon_logger::log(strlen($content) . ' Bytes Subject', $ep->getName());
+    $url = " - $_SERVER[REQUEST_URI]";
+
+    demo_addon_logger::log('Subject: ' . strlen($content) . ' Bytes<br>URL: ' . $url, $ep->getName());
 });

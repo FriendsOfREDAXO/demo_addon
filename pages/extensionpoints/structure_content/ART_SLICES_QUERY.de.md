@@ -1,6 +1,5 @@
 
-**Beschreibung:** ...
-
+**Beschreibung:** `ART_SLICES_QUERY`
 
 **Übergabewerte**
 
