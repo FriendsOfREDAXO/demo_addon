@@ -1,6 +1,6 @@
 # Changelog
 
-## Version 1.2.0beta1 // 22.05.2020
+## Version 1.2.0 // 05.01.2021
 
 Neu
 
