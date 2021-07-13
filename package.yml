@@ -85,6 +85,9 @@ requires:
   redaxo: "^5.10" # benötigt mindestens REDAXO 5.10
   packages:
     media_manager: "^2.0.1" # benötigt mindestens das AddOn Media Manager 2.0.1
+# Beispiel für ein Plugin Anforderung
+#  plugins:
+#    yform/rest: ">=3.4.0"
   php:
     version: ">=7.3" # benötigt mindestens PHP 7.3
     extensions: [gd, xml] # benötigt die PHP-Extensions GDlib und XML
