@@ -89,7 +89,7 @@ requires:
 #  plugins:
 #    yform/rest: ">=3.4.0"
   php:
-    version: ">=7.3" # benötigt mindestens PHP 7.3
+    version: ">=7.3, <9" # benötigt mindestens PHP 7.3
     extensions: [gd, xml] # benötigt die PHP-Extensions GDlib und XML
 
 # Plugins die automatisch installiert werden sollen
