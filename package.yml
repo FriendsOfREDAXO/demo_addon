@@ -3,7 +3,7 @@
 # Alle hier gesetzten Werte können über `$addon->getProperty($key)` abgefragt werden
 
 package: demo_addon # Pflichtfeld
-version: "1.2.0" # Pflichtfeld
+version: "1.2.1" # Pflichtfeld
 author: Friends Of REDAXO # Pflichtfeld für FOR-AddOns
 supportpage: https://github.com/FriendsOfREDAXO/demo_addon # Github-Adresse des AddOns
 
